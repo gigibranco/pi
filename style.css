@@ -1,51 +1,145 @@
 body{
-    background-color:#FFF5F8;
+    background: linear-gradient(135deg,#FFDCE8,#FFF5F8);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.cor-principal{
-    background:#E86A92;
-}
-
-.banner{
-    background:linear-gradient(135deg,#E86A92,#F7A8C4);
-}
-
-.navbar-brand{
-    font-size:1.7rem;
-}
-
-.card{
+.caixa-login{
+    width:420px;
     border:none;
-    border-radius:18px;
-    transition:0.3s;
+    border-radius:20px;
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 25px rgba(232,106,146,.25);
-}
-
-.card h1{
-    font-size:3rem;
-}
-
-.btn-outline-primary{
-    color:#E86A92;
-    border-color:#E86A92;
-}
-
-.btn-outline-primary:hover{
-    background:#E86A92;
-    border-color:#E86A92;
-    color:white;
-}
-
-.btn-light{
+.titulo{
     color:#E86A92;
     font-weight:bold;
 }
 
+.form-control{
+    border-radius:10px;
+}
+
+.form-control:focus{
+    border-color:#E86A92;
+    box-shadow:0 0 0 .2rem rgba(232,106,146,.25);
+}
+
+.btn-rosa{
+    background:#E86A92;
+    color:white;
+    font-weight:bold;
+    border:none;
+    border-radius:10px;
+    padding:10px;
+}
+
+.btn-rosa:hover{
+    background:#d85683;
+    color:white;
+}
+
+a{
+    color:#E86A92;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+.caixa-cadastro{
+    width: 480px;
+    border: none;
+    border-radius: 20px;
+}
+.cor-principal{
+    background:#E86A92;
+}
+
+.card-menu{
+    border:none;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.card-menu:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(232,106,146,.25)!important;
+}
+
+.icone{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.card-menu p{
+    color:#666;
+    min-height:60px;
+}
+
 footer{
-    margin-top:40px;
+    background:#fff;
+    border-top:1px solid #f2d5df;
+}
+.caixa-perfil{
+    max-width: 650px;
+    border: none;
+    border-radius: 20px;
+}
+
+.caixa-perfil img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+}
+
+.btn-outline-danger{
+    border-radius:10px;
+}
+
+.btn-outline-secondary{
+    border-radius:10px;
+}
+.caixa-formulario{
+    max-width:700px;
+    border:none;
+    border-radius:20px;
+}
+
+.form-control,
+.form-select{
+    border-radius:10px;
+}
+
+textarea{
+    resize:none;
+}
+
+input[type=file]{
+    border-radius:10px;
+}
+.card-img-top{
+    height:220px;
+    object-fit:cover;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+}
+
+.badge{
+    font-size:.8rem;
+    padding:8px 12px;
+}
+.bg-pink{
+    background-color:#E86A92;
+    color:white;
+}
+.card img{
+    min-height:550px;
+}
+
+strong{
+    color:#E86A92;
+}
+
+.card-body p{
+    margin-bottom:18px;
+    line-height:1.5;
 }

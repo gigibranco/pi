@@ -12,7 +12,6 @@
 
 <body>
 
-    <!-- Barra Superior -->
     <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
 
         <div class="container">
@@ -37,124 +36,88 @@
 
     </nav>
 
-    <!-- Conteúdo -->
-    <div class="container mt-5">
-
-        <div class="text-center mb-5">
-
-            <h2 class="titulo">
-                Bem-vindo ao Florescer 🌷
-            </h2>
-
-            <p class="text-muted">
-                Explore informações, curiosidades e cuidados sobre diversas espécies de flores.
-            </p>
-
+    <main>
+        <div class="container mt-5">
+            <div class="text-center mb-5">
+                <h2 class="titulo">
+                    Bem-vindo ao Florescer 🌷
+                </h2>
+                <p class="text-muted">
+                    Explore informações, curiosidades e cuidados sobre diversas espécies de flores.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-menu shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="icone">🌼</div>
+                            <h5>Catálogo</h5>
+                            <p>
+                                Consulte todas as flores cadastradas.
+                            </p>
+                            <a href="catalogo.html" class="btn btn-rosa">
+                                Acessar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-menu shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="icone">➕</div>
+                            <h5>Nova Flor</h5>
+                            <p>
+                                Cadastre uma nova espécie.
+                            </p>
+                            <a href="cadastroFlor.html" class="btn btn-rosa">
+                                Cadastrar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-menu shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="icone">👤</div>
+                            <h5>Meu Perfil</h5>
+                            <p>
+                                Atualize seus dados pessoais.
+                            </p>
+                            <a href="personalizarConta.html" class="btn btn-rosa">
+                                Perfil
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-menu shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="icone">❤️</div>
+                            <h5>Favoritos</h5>
+                            <p>
+                                Veja suas flores favoritas.
+                            </p>
+                            <a href="favoritos.html" class="btn btn-rosa">
+                                Abrir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="row g-4">
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="card card-menu shadow-sm h-100">
-
-                    <div class="card-body text-center">
-
-                        <div class="icone">🌼</div>
-
-                        <h5>Catálogo</h5>
-
-                        <p>
-                            Consulte todas as flores cadastradas.
-                        </p>
-
-                        <a href="catalogo.html" class="btn btn-rosa">
-                            Acessar
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="card card-menu shadow-sm h-100">
-
-                    <div class="card-body text-center">
-
-                        <div class="icone">➕</div>
-
-                        <h5>Nova Flor</h5>
-
-                        <p>
-                            Cadastre uma nova espécie.
-                        </p>
-
-                        <a href="cadastroFlor.html" class="btn btn-rosa">
-                            Cadastrar
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="card card-menu shadow-sm h-100">
-
-                    <div class="card-body text-center">
-
-                        <div class="icone">👤</div>
-
-                        <h5>Meu Perfil</h5>
-
-                        <p>
-                            Atualize seus dados pessoais.
-                        </p>
-
-                        <a href="personalizarConta.html" class="btn btn-rosa">
-                            Perfil
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="card card-menu shadow-sm h-100">
-
-                    <div class="card-body text-center">
-
-                        <div class="icone">❤️</div>
-
-                        <h5>Favoritos</h5>
-
-                        <p>
-                            Veja suas flores favoritas.
-                        </p>
-
-                        <a href="favoritos.html" class="btn btn-rosa">
-                            Abrir
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+    </main>
 
     <footer class="text-center py-4 mt-5">
+
+        <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
+            <circle cx="32" cy="18" r="10" />
+            <circle cx="32" cy="46" r="10" />
+            <circle cx="18" cy="32" r="10" />
+            <circle cx="46" cy="32" r="10" />
+            <circle cx="32" cy="32" r="9" style="fill:#FFDCE8;" />
+        </svg>
+
+        <br>
 
         <small class="text-muted">
             Projeto Florescer © 2026
@@ -165,4 +128,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

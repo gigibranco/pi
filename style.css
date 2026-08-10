@@ -220,9 +220,6 @@ input[type=file] {
 }
 
 .card-img-top {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     transition: transform .35s ease;
@@ -244,7 +241,7 @@ input[type=file] {
 .card img {
     width: 100%;
     height: auto;
-    max-height: 550px;
+    max-height: 220px;
     object-fit: cover;
 }
 
@@ -274,7 +271,7 @@ footer {
     }
 
     .card img {
-        max-height: 400px;
+        max-height: 200px;
     }
 
     .caixa-formulario,
@@ -310,7 +307,7 @@ footer {
     }
 
     .card img {
-        max-height: 280px;
+        max-height: 180px;
     }
 
     .btn-rosa,

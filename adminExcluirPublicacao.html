@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusão de Publicação - Florescer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="admin.html">🌸 Florescer | Administração</a>
+            <div class="d-flex align-items-center gap-2">
+                <span class="text-white me-2">Administrador</span>
+                <a href="index.html" class="btn btn-light btn-sm">Sair</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container py-5">
+            <div class="card caixa-formulario shadow-sm">
+                <div class="card-body text-center p-4 p-md-5">
+                    <div class="icone">🗑️</div>
+                    <h2 class="titulo">Exclusão de Publicação</h2>
+                    <p class="text-muted">Tem certeza que deseja excluir esta publicação?</p>
+                    <div class="card border-0 bg-light p-3 my-4">
+                        <h5 class="mb-1">🌺 Camélia</h5>
+                        <p class="mb-0 small text-muted">Categoria: Ornamental</p>
+                    </div>
+                    <p class="text-danger small">Esta ação não poderá ser desfeita após a integração com o banco de dados.</p>
+                    <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
+                        <button class="btn btn-outline-danger" type="button" data-bs-toggle="modal" data-bs-target="#confirmarExclusao">Excluir publicação</button>
+                        <a href="adminPublicacoes.html" class="btn btn-outline-secondary">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmarExclusao" tabindex="-1" aria-labelledby="tituloConfirmacao" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title titulo" id="tituloConfirmacao">Confirmar exclusão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">Deseja realmente excluir a publicação “Camélia”?</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Voltar</button>
+                        <button type="button" class="btn btn-rosa" onclick="confirmarExclusao()">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center py-4 mt-5">
+        <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
+            <circle cx="32" cy="18" r="10"/><circle cx="32" cy="46" r="10"/>
+            <circle cx="18" cy="32" r="10"/><circle cx="46" cy="32" r="10"/>
+            <circle cx="32" cy="32" r="9" style="fill:#FFDCE8;"/>
+        </svg>
+        <br><small class="text-muted">Projeto Florescer © 2026</small>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function confirmarExclusao() {
+            alert('Demonstração visual: a exclusão real será implementada no backend.');
+            window.location.href = 'adminPublicacoes.html';
+        }
+    </script>
+</body>
+</html>

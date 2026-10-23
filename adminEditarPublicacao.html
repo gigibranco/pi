@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição de Publicação - Florescer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="admin.html">🌸 Florescer | Administração</a>
+            <div class="d-flex align-items-center gap-2">
+                <span class="text-white me-2">Administrador</span>
+                <a href="index.html" class="btn btn-light btn-sm">Sair</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container py-5">
+            <div class="card caixa-formulario shadow-sm">
+                <div class="card-body p-4 p-md-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4 gap-3">
+                        <h2 class="titulo mb-0">✏️ Edição de Publicação</h2>
+                        <a href="adminPublicacoes.html" class="btn btn-outline-secondary">Voltar</a>
+                    </div>
+                    <div class="alert alert-info">Altere somente as informações que precisam de correção.</div>
+                    <form onsubmit="salvarEdicao(event)">
+                        <div class="mb-3">
+                            <label for="nomeFlor" class="form-label">Nome da flor</label>
+                            <input id="nomeFlor" class="form-control" value="Camélia" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nomeCientifico" class="form-label">Nome científico</label>
+                            <input id="nomeCientifico" class="form-control" value="Camellia japonica" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label">Categoria</label>
+                            <select id="categoria" class="form-select" required>
+                                <option>Ornamental</option><option>Medicinal</option><option>Tropical</option><option>Silvestre</option><option>Outra</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="corFlor" class="form-label">Cor predominante</label>
+                            <input id="corFlor" class="form-control" value="Rosa" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descricaoFlor" class="form-label">Descrição</label>
+                            <textarea id="descricaoFlor" class="form-control" rows="5" required>A camélia é uma flor ornamental conhecida por suas pétalas delicadas e variedade de cores.</textarea>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="submit" class="btn btn-rosa">Salvar alterações</button>
+                            <a href="adminPublicacoes.html" class="btn btn-outline-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center py-4 mt-5">
+        <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
+            <circle cx="32" cy="18" r="10"/><circle cx="32" cy="46" r="10"/>
+            <circle cx="18" cy="32" r="10"/><circle cx="46" cy="32" r="10"/>
+            <circle cx="32" cy="32" r="9" style="fill:#FFDCE8;"/>
+        </svg>
+        <br><small class="text-muted">Projeto Florescer © 2026</small>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function salvarEdicao(event) {
+            event.preventDefault();
+            alert('Demonstração visual: as alterações serão salvas quando o backend estiver conectado.');
+        }
+    </script>
+</body>
+</html>

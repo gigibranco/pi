@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container vh-100 d-flex justify-content-center align-items-center">
+            <div class="card shadow caixa-cadastro">
+                <div class="card-body p-5">
+                    <h2 class="titulo text-center mb-4">
+                        🌸 Criar Conta
+                    </h2>                      
+<form action="processarCadastro.php" method="POST">
+    <div class="mb-3">
+        <label class="form-label">Nome Completo</label>
+        <input type="text"
+               name="nome_completo"
+               class="form-control"
+               placeholder="Digite seu nome"
+               required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Usuário</label>
+        <input type="text"
+               name="nome_usuario"
+               class="form-control"
+               placeholder="Escolha um usuário"
+               required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">E-mail</label>
+        <input type="email"
+               name="email"
+               class="form-control"
+               placeholder="Digite seu e-mail"
+               required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Senha</label>
+        <input type="password"
+               name="senha"
+               class="form-control"
+               placeholder="Crie uma senha"
+               required>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label">Confirmar Senha</label>
+        <input type="password"
+               name="confirmar_senha"
+               class="form-control"
+               placeholder="Repita a senha"
+               required>
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-rosa">
+            Cadastrar
+        </button>
+
+        <a href="index.html" class="btn btn-outline-secondary">
+            Voltar para o Login
+        </a>
+    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center py-4 mt-5">
+
+        <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
+            <circle cx="32" cy="18" r="10" />
+            <circle cx="32" cy="46" r="10" />
+            <circle cx="18" cy="32" r="10" />
+            <circle cx="46" cy="32" r="10" />
+            <circle cx="32" cy="32" r="9" style="fill:#FFDCE8;" />
+        </svg>
+
+        <br>
+
+        <small class="text-muted">
+            Projeto Florescer © 2026
+        </small>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

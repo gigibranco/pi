@@ -68,7 +68,7 @@
             Cadastrar
         </button>
 
-        <a href="index.html" class="btn btn-outline-secondary">
+        <a href="index.php" class="btn btn-outline-secondary">
             Voltar para o Login
         </a>
     </div>

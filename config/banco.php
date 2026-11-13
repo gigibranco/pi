@@ -1,5 +1,5 @@
-
 <?php
+
 $servidor = "db";
 $usuario = "florescer_user";
 $senha = "florescer123";

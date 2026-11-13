@@ -1,3 +1,7 @@
+<?php
+require_once "verificarLogin.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -22,11 +26,11 @@
 
             <div class="d-flex align-items-center">
 
-                <span class="text-white me-3">
-                    Olá, Usuário!
+               <span class="text-white me-3">
+                    Olá, <?= htmlspecialchars($_SESSION["nome_usuario"]) ?>!
                 </span>
 
-                <a href="index.html" class="btn btn-light btn-sm">
+                <a href="sair.php" class="btn btn-light btn-sm">
                     Sair
                 </a>
             </div>

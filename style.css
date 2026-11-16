@@ -322,3 +322,108 @@ footer {
         height: 90px;
     }
 }
+
+
+/* TELA DE CADASTRO CONCLUÍDO */
+
+.sucesso-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #fff0f5;
+}
+
+.sucesso-card {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 45px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sucesso-icone {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.sucesso-card h1 {
+    color: #c75b85;
+    margin-bottom: 15px;
+}
+
+.sucesso-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn-login {
+    display: inline-block;
+    background: #d8759b;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #bd5d83;
+}
+
+/* TELA DE CADASTRO REALIZADO */
+
+.sucesso-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: #fff0f5;
+}
+
+.sucesso-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 45px 35px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.sucesso-icone {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.sucesso-card h1 {
+    color: #c75b85;
+    margin-bottom: 15px;
+}
+
+.sucesso-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn-login {
+    display: inline-block;
+    background: #d8759b;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #bd5d83;
+}

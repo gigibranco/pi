@@ -1,5 +1,5 @@
-
 <?php
+
 
 require_once "config/banco.php";
 
@@ -47,6 +47,11 @@ $sql_verificar = "SELECT id FROM usuarios
                   WHERE nome_usuario = ? OR email = ?";
 
 $stmt = mysqli_prepare($conn, $sql_verificar);
+
+if (!$stmt) {
+    die("Erro ao preparar a consulta.");
+}
+
 mysqli_stmt_bind_param($stmt, "ss", $nome_usuario, $email);
 mysqli_stmt_execute($stmt);
 
@@ -68,6 +73,11 @@ $sql_inserir = "INSERT INTO usuarios
                 VALUES (?, ?, ?, ?)";
 
 $stmt = mysqli_prepare($conn, $sql_inserir);
+
+if (!$stmt) {
+    die("Erro ao preparar o cadastro.");
+}
+
 mysqli_stmt_bind_param(
     $stmt,
     "ssss",
@@ -78,13 +88,18 @@ mysqli_stmt_bind_param(
 );
 
 if (mysqli_stmt_execute($stmt)) {
-    echo "<h2>Cadastro realizado com sucesso! 🌸</h2>";
-    echo "<p>Seu usuário foi cadastrado no Florescer.</p>";
-    echo "<a href='index.html'>Voltar para o login</a>";
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    header("Location: cadastroSucesso.php");
+    exit;
+
 } else {
+
     echo "Não foi possível realizar o cadastro. Tente novamente.";
+
 }
 
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
-?>

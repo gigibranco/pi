@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 require_once "config/banco.php";
@@ -22,6 +23,10 @@ $sql = "SELECT id, nome_completo, nome_usuario, email, senha, tipo
 
 $stmt = mysqli_prepare($conn, $sql);
 
+if (!$stmt) {
+    die("Erro ao preparar a consulta.");
+}
+
 mysqli_stmt_bind_param($stmt, "ss", $usuario, $usuario);
 mysqli_stmt_execute($stmt);
 
@@ -36,13 +41,22 @@ if ($dados && password_verify($senha, $dados["senha"])) {
     $_SESSION["nome_usuario"] = $dados["nome_completo"];
     $_SESSION["tipo"] = $dados["tipo"];
 
-    header("Location: telaPrincipal.php");
-    exit;
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    if ($dados["tipo"] === "administrador") {
+        header("Location: admin.php");
+        exit;
+    } else {
+        header("Location: telaPrincipal.php");
+        exit;
+    }
 
 } else {
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
     header("Location: index.php?erro=credenciais");
     exit;
 }
-
-mysqli_stmt_close($stmt);
-mysqli_close($conn);

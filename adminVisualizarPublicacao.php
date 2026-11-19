@@ -15,10 +15,10 @@ require_once "verificarAdmin.php";
 
     <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="admin.html">🌸 Florescer | Administração</a>
+            <a class="navbar-brand fw-bold" href="admin.php">🌸 Florescer | Administração</a>
             <div class="d-flex align-items-center gap-2">
                 <span class="text-white me-2">Administrador</span>
-                <a href="index.html" class="btn btn-light btn-sm">Sair</a>
+                <a href="index.php" class="btn btn-light btn-sm">Sair</a>
             </div>
         </div>
     </nav>
@@ -30,7 +30,7 @@ require_once "verificarAdmin.php";
                     <h2 class="titulo">👥 Gerenciamento de Usuários</h2>
                     <p class="text-muted mb-0">Consulte os usuários cadastrados no Florescer.</p>
                 </div>
-                <a href="admin.html" class="btn btn-outline-secondary">Voltar</a>
+                <a href="admin.php" class="btn btn-outline-secondary">Voltar</a>
             </div>
             <div class="card border-0 shadow-sm p-3 mb-4">
                 <label for="pesquisaUsuario" class="form-label">Pesquisar usuário</label>

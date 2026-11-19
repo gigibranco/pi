@@ -18,77 +18,100 @@ if (isset($_GET["erro"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Florescer</title>
+    <title>Florescer | Bem-vindo</title>
 </head>
 
-<body>
+<body class="pagina-login">
+
     <main>
-        <div class="container vh-100 d-flex justify-content-center align-items-center">
-            <div class="card shadow caixa-login">
-                <div class="card-body p-5">
-                    <h2 class="text-center titulo mb-4">
-                        🌸 Florescer
-                    </h2>
+        <section class="login-page">
+            <div class="login-decoracao login-decoracao-1">✿</div>
+            <div class="login-decoracao login-decoracao-2">❀</div>
+            <div class="login-decoracao login-decoracao-3">✧</div>
+
+            <div class="card caixa-login login-card">
+                <div class="card-body">
+
+                    <div class="login-marca">
+                        <div class="login-flor">❀</div>
+                        <h1>Florescer</h1>
+                        <p>Um espaço para cultivar conhecimento</p>
+                    </div>
+
+                    <div class="login-divisor">
+                        <span></span>
+                        <span class="login-divisor-flor">✿</span>
+                        <span></span>
+                    </div>
+
+                    <h2 class="login-boas-vindas">Que bom ter você aqui!</h2>
+                    <p class="login-instrucao">
+                        Entre na sua conta para continuar.
+                    </p>
 
                     <?php if ($mensagemErro !== ""): ?>
-                        <div class="alert alert-danger text-center" role="alert">
+                        <div class="alert alert-danger text-center login-alerta" role="alert">
                             <?= htmlspecialchars($mensagemErro) ?>
                         </div>
                     <?php endif; ?>
 
                     <form action="processarLogin.php" method="POST">
+
                         <div class="mb-3">
                             <label class="form-label">Usuário ou e-mail</label>
-                            <input type="text" name="usuario" class="form-control"
-                                placeholder="Digite seu usuário ou e-mail" required>
+                            <input
+                                type="text"
+                                name="usuario"
+                                class="form-control login-input"
+                                placeholder="Digite seu usuário ou e-mail"
+                                required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Senha</label>
-                            <input type="password" name="senha" class="form-control"
-                                placeholder="Digite sua senha" required>
+                            <input
+                                type="password"
+                                name="senha"
+                                class="form-control login-input"
+                                placeholder="Digite sua senha"
+                                required>
                         </div>
 
-                        <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn btn-rosa">
-                                Entrar
+                        <div class="d-grid gap-3 mt-4">
+                            <button type="submit" class="btn btn-rosa login-botao">
+                                Entrar na minha conta
                             </button>
 
-                            <a href="telaPrincipal.php" class="btn btn-outline-secondary">
-                                Acessar sem login
+                            <a href="telaPrincipal.php" class="btn login-visitante">
+                                Acessar como visitante
                             </a>
                         </div>
 
-                        <div class="text-center mt-3">
+                        <div class="text-center mt-4">
                             <a href="recuperarSenha.html" class="link-rosa">
                                 Esqueceu sua senha?
                             </a>
                         </div>
 
-                        <div class="text-center mt-2">
-                            <small>
-                                Não possui uma conta?
-                                <a href="cadastroUsuario.php" class="link-rosa">
-                                    Clique aqui!
-                                </a>
-                            </small>
+                        <div class="login-cadastro text-center mt-3">
+                            <span>Não possui uma conta?</span>
+                            <a href="cadastroUsuario.php" class="link-rosa">
+                                Cadastre-se aqui
+                            </a>
                         </div>
+
                     </form>
                 </div>
             </div>
-        </div>
+
+            <p class="login-frase">
+                <span>✿</span> Cada flor tem seu tempo para florescer. <span>✿</span>
+            </p>
+        </section>
     </main>
 
-    <footer class="text-center py-4 mt-5">
-        <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
-            <circle cx="32" cy="18" r="10" />
-            <circle cx="32" cy="46" r="10" />
-            <circle cx="18" cy="32" r="10" />
-            <circle cx="46" cy="32" r="10" />
-            <circle cx="32" cy="32" r="9" style="fill:#FFDCE8;" />
-        </svg>
-        <br>
-        <small class="text-muted">Projeto Florescer © 2026</small>
+    <footer class="text-center py-3 login-footer">
+        <small class="text-muted">Florescer © 2026 · Cultivando conhecimento</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

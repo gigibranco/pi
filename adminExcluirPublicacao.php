@@ -15,10 +15,10 @@ require_once "verificarAdmin.php";
 
     <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="admin.html">🌸 Florescer | Administração</a>
+            <a class="navbar-brand fw-bold" href="admin.php">🌸 Florescer | Administração</a>
             <div class="d-flex align-items-center gap-2">
                 <span class="text-white me-2">Administrador</span>
-                <a href="index.html" class="btn btn-light btn-sm">Sair</a>
+                <a href="index.php" class="btn btn-light btn-sm">Sair</a>
             </div>
         </div>
     </nav>
@@ -37,7 +37,7 @@ require_once "verificarAdmin.php";
                     <p class="text-danger small">Esta ação não poderá ser desfeita após a integração com o banco de dados.</p>
                     <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
                         <button class="btn btn-outline-danger" type="button" data-bs-toggle="modal" data-bs-target="#confirmarExclusao">Excluir publicação</button>
-                        <a href="adminPublicacoes.html" class="btn btn-outline-secondary">Cancelar</a>
+                        <a href="adminPublicacoes.php" class="btn btn-outline-secondary">Cancelar</a>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@ require_once "verificarAdmin.php";
     <script>
         function confirmarExclusao() {
             alert('Demonstração visual: a exclusão real será implementada no backend.');
-            window.location.href = 'adminPublicacoes.html';
+            window.location.href = 'adminPublicacoes.php';
         }
     </script>
 </body>

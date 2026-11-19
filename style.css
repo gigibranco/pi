@@ -1,3 +1,8 @@
+
+/* ==================================
+   ESTILOS GERAIS - FLORESCER
+================================== */
+
 * {
     box-sizing: border-box;
 }
@@ -79,13 +84,13 @@ strong {
     color: white;
 }
 
-.form-control,
-.form-select {
-    border-radius: 10px;
-}
+/* ==================================
+   FORMULÁRIOS
+================================== */
 
 .form-control,
 .form-select {
+    border-radius: 10px;
     transition: border-color .2s ease, box-shadow .2s ease;
 }
 
@@ -102,6 +107,10 @@ textarea {
 input[type=file] {
     border-radius: 10px;
 }
+
+/* ==================================
+   BOTÕES
+================================== */
 
 .btn-rosa {
     background: #E86A92;
@@ -142,6 +151,10 @@ input[type=file] {
     transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease;
 }
 
+/* ==================================
+   CAIXAS E CARTÕES
+================================== */
+
 .caixa-login,
 .caixa-cadastro,
 .caixa-perfil,
@@ -176,6 +189,10 @@ input[type=file] {
     max-width: 100%;
 }
 
+/* ==================================
+   MENU PRINCIPAL
+================================== */
+
 .card-menu {
     border: none;
     border-radius: 20px;
@@ -203,6 +220,10 @@ input[type=file] {
     transition: transform .3s ease;
 }
 
+/* ==================================
+   ANIMAÇÕES
+================================== */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -218,6 +239,10 @@ input[type=file] {
 .fade-in-up {
     animation: fadeInUp .5s ease both;
 }
+
+/* ==================================
+   CARTÕES DE PUBLICAÇÕES
+================================== */
 
 .card-img-top {
     border-top-left-radius: 20px;
@@ -255,10 +280,298 @@ input[type=file] {
     padding: 8px 12px;
 }
 
+/* ==================================
+   RODAPÉ
+================================== */
+
 footer {
     background: #fff;
     border-top: 1px solid #f2d5df;
 }
+
+/* ==================================
+   TELA DE LOGIN - FLORESCER
+================================== */
+
+.pagina-login {
+    background: #fff7f8;
+}
+
+.login-page {
+    min-height: calc(100vh - 60px);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 20px 25px;
+
+    background:
+        radial-gradient(circle at 10% 15%, rgba(255, 220, 232, .65), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(248, 215, 226, .65), transparent 30%),
+        #fff7f8;
+}
+
+.login-card {
+    position: relative;
+    z-index: 2;
+    max-width: 440px;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid #f7e1e8;
+    border-radius: 26px;
+    box-shadow: 0 15px 45px rgba(183, 105, 132, .13);
+    overflow: hidden;
+    animation: fadeInUp .7s ease both;
+}
+
+.login-card .card-body {
+    padding: 42px 40px;
+}
+
+.login-marca {
+    text-align: center;
+}
+
+.login-flor {
+    color: #e86a92;
+    font-size: 43px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.login-marca h1 {
+    color: #d65d86;
+    font-family: Georgia, serif;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.login-marca p {
+    color: #a88b96;
+    font-size: 13px;
+    margin-bottom: 0;
+    letter-spacing: .3px;
+}
+
+.login-divisor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.login-divisor span:not(.login-divisor-flor) {
+    height: 1px;
+    width: 65px;
+    background: #f1dce3;
+}
+
+.login-divisor-flor {
+    color: #e88aaa;
+    font-size: 17px;
+}
+
+.login-boas-vindas {
+    color: #70545f;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.login-instrucao {
+    color: #a18c94;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-card .form-label {
+    color: #765b66;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.login-input {
+    min-height: 47px;
+    border: 1px solid #eedce2;
+    border-radius: 12px;
+    background: #fffbfc;
+    padding: 11px 14px;
+    font-size: 14px;
+}
+
+.login-input::placeholder {
+    color: #c2adb5;
+}
+
+.login-input:focus {
+    background: #fff;
+    border-color: #e88aaa;
+    box-shadow: 0 0 0 3px rgba(232, 106, 146, .12);
+}
+
+.login-botao {
+    min-height: 47px;
+    border-radius: 12px;
+    background: #df7195;
+    letter-spacing: .2px;
+}
+
+.login-botao:hover {
+    background: #cc5d83;
+}
+
+.login-visitante {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #efd5df;
+    border-radius: 12px;
+    color: #a66d83;
+    background: #fff9fb;
+    font-size: 14px;
+    transition: all .2s ease;
+}
+
+.login-visitante:hover {
+    color: #c75b85;
+    background: #fff0f5;
+    border-color: #e9b8ca;
+    transform: translateY(-1px);
+}
+
+.login-card a {
+    font-size: 13px;
+}
+
+.login-cadastro {
+    color: #927e86;
+    font-size: 13px;
+}
+
+.login-cadastro a {
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+.login-alerta {
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.login-decoracao {
+    position: absolute;
+    color: #e8a9bd;
+    opacity: .45;
+    pointer-events: none;
+}
+
+.login-decoracao-1 {
+    top: 12%;
+    left: 12%;
+    font-size: 65px;
+    transform: rotate(-15deg);
+}
+
+.login-decoracao-2 {
+    right: 13%;
+    bottom: 15%;
+    font-size: 75px;
+    transform: rotate(15deg);
+}
+
+.login-decoracao-3 {
+    top: 23%;
+    right: 22%;
+    font-size: 35px;
+    color: #dca1b5;
+}
+
+.login-frase {
+    position: relative;
+    z-index: 1;
+    color: #b18c9a;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+.login-frase span {
+    color: #df8eaa;
+    margin: 0 5px;
+}
+
+.login-footer {
+    background: transparent;
+    border-top: none;
+}
+
+/* ==================================
+   PÁGINA DE SUCESSO
+================================== */
+
+.sucesso-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: #fff0f5;
+}
+
+.sucesso-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 45px 35px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.sucesso-icone {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.sucesso-card h1 {
+    color: #c75b85;
+    margin-bottom: 15px;
+}
+
+.sucesso-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn-login {
+    display: inline-block;
+    background: #d8759b;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #bd5d83;
+}
+
+/* ==================================
+   RESPONSIVIDADE
+================================== */
 
 @media (max-width: 768px) {
 
@@ -321,109 +634,1079 @@ footer {
         width: 90px;
         height: 90px;
     }
+
+
+    .login-page {
+        padding: 30px 16px 20px;
+    }
+
+    .login-card .card-body {
+        padding: 32px 24px;
+    }
+
+    .login-marca h1 {
+        font-size: 31px;
+    }
+
+    .login-boas-vindas {
+        font-size: 21px;
+    }
+
+    .login-decoracao-1 {
+        left: 2%;
+        font-size: 45px;
+    }
+
+    .login-decoracao-2 {
+        right: 2%;
+        font-size: 50px;
+    }
+
+    .login-decoracao-3 {
+        display: none;
+    }
+
+    .login-frase {
+        font-size: 12px;
+    }
 }
 
+/* ==================================
+   TELA PRINCIPAL - FLORESCER
+================================== */
 
-/* TELA DE CADASTRO CONCLUÍDO */
-
-.sucesso-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: #fff0f5;
+.pagina-principal {
+    background: #fff7f8;
 }
 
-.sucesso-card {
-    background: white;
-    width: 100%;
-    max-width: 450px;
-    padding: 45px 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+/* Barra superior */
+
+.navbar-florescer {
+    background: #fff;
+    border-bottom: 1px solid #f3dce4;
+    padding: 15px 0;
 }
 
-.sucesso-icone {
-    font-size: 55px;
-    margin-bottom: 15px;
-}
-
-.sucesso-card h1 {
-    color: #c75b85;
-    margin-bottom: 15px;
-}
-
-.sucesso-card p {
-    color: #666;
-    line-height: 1.7;
-    margin-bottom: 30px;
-}
-
-.btn-login {
-    display: inline-block;
-    background: #d8759b;
-    color: white;
-    padding: 13px 28px;
-    border-radius: 10px;
-    text-decoration: none;
+.marca-navbar {
+    color: #d65d86 !important;
+    font-family: Georgia, serif;
+    font-size: 25px;
     font-weight: bold;
-    transition: 0.3s;
+    letter-spacing: .5px;
 }
 
-.btn-login:hover {
-    background: #bd5d83;
+.marca-icone {
+    color: #e88aaa;
+    font-size: 29px;
+    margin-right: 5px;
 }
 
-/* TELA DE CADASTRO REALIZADO */
+.usuario-navbar {
+    color: #987b87;
+    font-size: 14px;
+}
 
-.sucesso-container {
-    min-height: 100vh;
+.btn-navbar {
+    background: #df7195;
+    color: white;
+    border-radius: 10px;
+    padding: 7px 19px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: .2s ease;
+}
+
+.btn-navbar:hover {
+    background: #cc5d83;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Conteúdo principal */
+
+.principal-conteudo {
+    position: relative;
+    padding: 45px 0 35px;
+    background:
+        radial-gradient(circle at 5% 10%, rgba(255, 220, 232, .45), transparent 25%),
+        radial-gradient(circle at 95% 90%, rgba(248, 215, 226, .45), transparent 25%),
+        #fff7f8;
+}
+
+.principal-cabecalho {
+    margin-bottom: 38px;
+}
+
+.principal-flor {
+    color: #e88aaa;
+    font-size: 39px;
+    margin-bottom: 5px;
+}
+
+.principal-cabecalho h1 {
+    color: #d65d86;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.principal-subtitulo {
+    color: #9d8790;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.aviso-visitante {
+    display: inline-block;
+    max-width: 650px;
+    padding: 11px 18px;
+    border: 1px solid #f1dce4;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .8);
+    color: #987b87;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.aviso-visitante span {
+    margin-right: 5px;
+}
+
+.principal-divisor {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    background: #fff0f5;
+    gap: 13px;
+    margin-top: 23px;
+    color: #df8eaa;
+    font-size: 17px;
 }
 
-.sucesso-card {
-    background: #ffffff;
-    width: 100%;
-    max-width: 480px;
-    padding: 45px 35px;
+.principal-divisor span {
+    width: 65px;
+    height: 1px;
+    background: #efd6df;
+}
+
+/* Cartões do menu */
+
+.card-florescer {
+    background: rgba(255, 255, 255, .95);
+    border: 1px solid #f4e1e7;
     border-radius: 22px;
-    text-align: center;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 7px 22px rgba(183, 105, 132, .09);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
-.sucesso-icone {
-    font-size: 55px;
-    margin-bottom: 15px;
+.card-florescer:hover {
+    transform: translateY(-7px);
+    border-color: #edc3d2;
+    box-shadow: 0 13px 28px rgba(183, 105, 132, .16);
 }
 
-.sucesso-card h1 {
-    color: #c75b85;
-    margin-bottom: 15px;
+.card-florescer .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 23px;
 }
 
-.sucesso-card p {
-    color: #666;
-    line-height: 1.7;
-    margin-bottom: 30px;
+.card-florescer .icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    height: 82px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: #fff0f5;
+    font-size: 39px;
+    transition: transform .3s ease, background .3s ease;
 }
 
-.btn-login {
-    display: inline-block;
-    background: #d8759b;
-    color: white;
-    padding: 13px 28px;
-    border-radius: 10px;
-    text-decoration: none;
+.card-florescer:hover .icone {
+    transform: scale(1.1) rotate(-5deg);
+    background: #ffe6ef;
+}
+
+.card-florescer h5 {
+    color: #795b68;
+    font-family: Georgia, serif;
+    font-size: 19px;
     font-weight: bold;
-    transition: 0.3s;
+    margin-bottom: 12px;
 }
 
-.btn-login:hover {
-    background: #bd5d83;
+.card-florescer p {
+    color: #a18c94;
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 65px;
+    margin-bottom: 20px;
+}
+
+.btn-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    max-width: 210px;
+    min-height: 42px;
+    border-radius: 11px;
+    font-size: 13px;
+    padding: 10px 14px;
+}
+
+.btn-card span {
+    font-size: 17px;
+    transition: transform .2s ease;
+}
+
+.btn-card:hover span {
+    transform: translateX(3px);
+}
+
+/* Frase decorativa */
+
+.principal-frase {
+    color: #b18c9a;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    margin-top: 42px;
+    padding: 10px;
+}
+
+.principal-frase span {
+    color: #df8eaa;
+    margin: 0 6px;
+}
+
+/* Modal */
+
+.modal-florescer {
+    border: 1px solid #f3dce4;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(183, 105, 132, .15);
+}
+
+.modal-florescer .modal-header {
+    background: #fff7f9;
+    border-bottom: 1px solid #f3e1e7;
+}
+
+.modal-florescer .modal-title {
+    color: #d65d86;
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+
+.modal-florescer .modal-title span {
+    color: #e88aaa;
+    margin-right: 5px;
+}
+
+.modal-florescer .modal-body {
+    color: #987b87;
+    line-height: 1.7;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.modal-flor {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.modal-florescer .modal-footer {
+    background: #fffafa;
+    border-top: 1px solid #f3e1e7;
+    padding: 17px;
+}
+
+.btn-modal-secundario {
+    border: 1px solid #efd5df;
+    border-radius: 10px;
+    color: #a66d83;
+    background: #fff;
+    padding: 10px 16px;
+    font-size: 14px;
+}
+
+.btn-modal-secundario:hover {
+    color: #c75b85;
+    background: #fff0f5;
+    border-color: #e9b8ca;
+}
+
+/* Rodapé */
+
+.footer-florescer {
+    background: #fff;
+    border-top: 1px solid #f2dce4;
+    color: #a18c94;
+    font-size: 12px;
+}
+
+.footer-flor {
+    color: #e88aaa;
+    font-size: 27px;
+    margin-bottom: 4px;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+
+    .principal-cabecalho h1 {
+        font-size: 29px;
+    }
+
+    .card-florescer .card-body {
+        padding: 27px 18px;
+    }
+
+    .principal-conteudo {
+        padding-top: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .navbar-florescer {
+        padding: 12px 0;
+    }
+
+    .marca-navbar {
+        font-size: 21px;
+    }
+
+    .marca-icone {
+        font-size: 25px;
+    }
+
+    .usuario-navbar {
+        font-size: 11px;
+    }
+
+    .btn-navbar {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .principal-cabecalho h1 {
+        font-size: 26px;
+    }
+
+    .principal-subtitulo {
+        font-size: 13px;
+    }
+
+    .aviso-visitante {
+        font-size: 12px;
+    }
+
+    .card-florescer .card-body {
+        padding: 25px 20px;
+    }
+
+    .card-florescer p {
+        min-height: auto;
+    }
+
+    .principal-frase {
+        font-size: 12px;
+        line-height: 1.7;
+        margin-top: 30px;
+    }
+}
+
+/* ==================================
+   CATÁLOGO DE FLORES - FLORESCER
+================================== */
+
+.pagina-catalogo {
+    background: #fff7f8;
+}
+
+.catalogo-conteudo {
+    min-height: calc(100vh - 150px);
+    background:
+        radial-gradient(circle at 5% 10%, rgba(255, 220, 232, .4), transparent 25%),
+        radial-gradient(circle at 95% 90%, rgba(248, 215, 226, .4), transparent 25%),
+        #fff7f8;
+}
+
+/* Cabeçalho */
+
+.catalogo-cabecalho {
+    margin-bottom: 42px;
+}
+
+.catalogo-flor {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.catalogo-cabecalho h1 {
+    color: #d65d86;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.catalogo-cabecalho p {
+    color: #9d8790;
+    font-size: 15px;
+}
+
+.catalogo-divisor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    margin-top: 22px;
+    color: #df8eaa;
+    font-size: 17px;
+}
+
+.catalogo-divisor span {
+    width: 65px;
+    height: 1px;
+    background: #efd6df;
+}
+
+/* Cartões das flores */
+
+.card-catalogo {
+    background: #fff;
+    border: 1px solid #f4e1e7;
+    border-radius: 21px;
+    box-shadow: 0 7px 22px rgba(183, 105, 132, .09);
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card-catalogo:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 13px 28px rgba(183, 105, 132, .16);
+}
+
+.card-catalogo .catalogo-imagem {
+    height: 235px;
+    overflow: hidden;
+    background: #fff0f5;
+}
+
+.card-catalogo .catalogo-imagem img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.card-catalogo:hover .catalogo-imagem img {
+    transform: scale(1.06);
+}
+
+.card-catalogo .card-body {
+    padding: 23px 20px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-catalogo h5 {
+    color: #795b68;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.btn-catalogo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    max-width: 190px;
+    min-height: 42px;
+    border-radius: 11px;
+    font-size: 13px;
+    padding: 10px 14px;
+}
+
+.btn-catalogo span {
+    font-size: 17px;
+    transition: transform .2s ease;
+}
+
+.btn-catalogo:hover span {
+    transform: translateX(3px);
+}
+
+/* Frase final */
+
+.catalogo-frase {
+    color: #b18c9a;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    margin-top: 42px;
+    padding: 10px;
+}
+
+.catalogo-frase span {
+    color: #df8eaa;
+    margin: 0 6px;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+
+    .catalogo-cabecalho h1 {
+        font-size: 29px;
+    }
+
+    .card-catalogo .catalogo-imagem {
+        height: 210px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .catalogo-conteudo .container {
+        padding-top: 35px !important;
+    }
+
+    .catalogo-cabecalho h1 {
+        font-size: 26px;
+    }
+
+    .catalogo-cabecalho p {
+        font-size: 13px;
+    }
+
+    .card-catalogo .catalogo-imagem {
+        height: 200px;
+    }
+
+    .catalogo-frase {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}
+
+/* ==================================
+   DETALHES DAS FLORES - FLORESCER
+================================== */
+
+.pagina-detalhes {
+    background: #fff7f8;
+}
+
+.detalhes-conteudo {
+    min-height: calc(100vh - 150px);
+    background:
+        radial-gradient(circle at 5% 10%, rgba(255, 220, 232, .4), transparent 25%),
+        radial-gradient(circle at 95% 90%, rgba(248, 215, 226, .4), transparent 25%),
+        #fff7f8;
+}
+
+/* Cabeçalho */
+
+.detalhes-cabecalho {
+    margin-bottom: 35px;
+}
+
+.detalhes-flor {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.detalhes-cabecalho h1 {
+    color: #d65d86;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.detalhes-cabecalho > p {
+    color: #9d8790;
+    font-size: 15px;
+}
+
+/* Cartão principal */
+
+.detalhes-card {
+    border: 1px solid #f4e1e7;
+    border-radius: 24px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(183, 105, 132, .11);
+}
+
+/* Imagem */
+
+.detalhes-imagem {
+    height: 100%;
+    min-height: 700px;
+    overflow: hidden;
+    background: #fff0f5;
+}
+
+.detalhes-imagem img {
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+
+.detalhes-imagem:hover img {
+    transform: scale(1.03);
+}
+
+/* Informações */
+
+.detalhes-corpo {
+    padding: 40px;
+}
+
+.detalhes-etiqueta {
+    display: inline-block;
+    background: #fff0f5;
+    color: #bd7590;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
+.detalhes-corpo h2 {
+    color: #d65d86;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.detalhes-nome-cientifico {
+    color: #a18c94;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.detalhes-divisor {
+    width: 100%;
+    height: 1px;
+    background: #f1dce3;
+    margin-bottom: 23px;
+}
+
+/* Blocos de informações */
+
+.detalhes-informacoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+    margin-bottom: 25px;
+}
+
+.informacao-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    background: #fff8fa;
+    border: 1px solid #f5e6eb;
+    border-radius: 13px;
+}
+
+.informacao-icone {
+    font-size: 23px;
+}
+
+.informacao-item small {
+    display: block;
+    color: #a18c94;
+    font-size: 11px;
+    margin-bottom: 3px;
+}
+
+.informacao-item p {
+    color: #765b66;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Cuidados e curiosidades */
+
+.detalhes-texto-box {
+    background: #fff8fa;
+    border-left: 3px solid #e88aaa;
+    border-radius: 5px 13px 13px 5px;
+    padding: 17px 19px;
+    margin-bottom: 16px;
+}
+
+.detalhes-texto-box h5 {
+    color: #bd6688;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.detalhes-texto-box p {
+    color: #887780;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Botão de favoritos */
+
+.detalhes-acoes {
+    margin-top: 25px;
+}
+
+.btn-favorito {
+    min-height: 45px;
+    padding: 11px 20px;
+    border-radius: 12px;
+}
+
+/* Frase final */
+
+.detalhes-frase {
+    color: #b18c9a;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    margin-top: 35px;
+    padding: 10px;
+}
+
+.detalhes-frase span {
+    color: #df8eaa;
+    margin: 0 6px;
+}
+
+/* Responsividade */
+
+@media (max-width: 991px) {
+
+    .detalhes-imagem {
+        min-height: 400px;
+        height: 400px;
+    }
+
+    .detalhes-imagem img {
+        min-height: 400px;
+    }
+
+    .detalhes-corpo {
+        padding: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .detalhes-cabecalho h1 {
+        font-size: 27px;
+    }
+
+    .detalhes-cabecalho > p {
+        font-size: 13px;
+    }
+
+    .detalhes-imagem {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    .detalhes-imagem img {
+        min-height: 280px;
+    }
+
+    .detalhes-corpo {
+        padding: 25px 20px;
+    }
+
+    .detalhes-corpo h2 {
+        font-size: 27px;
+    }
+
+    .detalhes-informacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .detalhes-frase {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}
+body.pagina-detalhes {
+    background: #fff7f8;
+    outline: none;
+}
+
+/* CADASTRO DE FLOR */
+
+body.pagina-cadastro-flor {
+    background: #fff7f8;
+}
+
+.cadastro-flor-conteudo {
+    min-height: 80vh;
+    background:
+        radial-gradient(circle at 10% 15%, #ffe4ed 0, transparent 22%),
+        radial-gradient(circle at 90% 70%, #ffeaf0 0, transparent 25%);
+}
+
+.cadastro-flor-cabecalho {
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.cadastro-flor-icone {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.cadastro-flor-cabecalho h1 {
+    color: #bd5278;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.cadastro-flor-cabecalho p {
+    color: #947b85;
+    margin-top: 12px;
+}
+
+.cadastro-flor-card {
+    max-width: 700px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #f7dce5;
+    box-shadow: 0 12px 35px rgba(190, 91, 126, 0.10);
+}
+
+.cadastro-flor-card .form-label {
+    color: #87576a;
+    font-weight: 600;
+}
+
+.cadastro-flor-card .form-control,
+.cadastro-flor-card .form-select {
+    border: 1px solid #efd5df;
+    border-radius: 12px;
+    padding: 12px 14px;
+    background-color: #fffafb;
+}
+
+.cadastro-flor-card .form-control:focus,
+.cadastro-flor-card .form-select:focus {
+    border-color: #e88aaa;
+    box-shadow: 0 0 0 3px rgba(232, 106, 146, 0.13);
+}
+
+.cadastro-flor-card textarea {
+    resize: vertical;
+}
+
+.btn-cadastro-flor {
+    padding: 13px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.btn-limpar-flor {
+    border: 1px solid #efd5df;
+    color: #a66d83;
+    background: #fff7fa;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.btn-limpar-flor:hover {
+    background: #fce8ef;
+    color: #a34d70;
+}
+
+.cadastro-flor-frase {
+    color: #bd7892;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+@media (max-width: 576px) {
+    .cadastro-flor-card {
+        padding: 25px 18px;
+    }
+
+    .cadastro-flor-cabecalho h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* MINHAS PUBLICAÇÕES */
+
+body.pagina-minhas-publicacoes {
+    background: #fff7f8;
+}
+
+.minhas-publicacoes-conteudo {
+    min-height: 80vh;
+    background:
+        radial-gradient(circle at 8% 15%, #ffe4ed 0, transparent 22%),
+        radial-gradient(circle at 92% 65%, #ffeaf0 0, transparent 25%);
+}
+
+.minhas-publicacoes-cabecalho {
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.minhas-publicacoes-icone {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.minhas-publicacoes-cabecalho h1 {
+    color: #bd5278;
+    font-weight: 700;
+}
+
+.minhas-publicacoes-cabecalho p {
+    color: #947b85;
+    margin-top: 10px;
+}
+
+.btn-nova-publicacao {
+    border-radius: 12px;
+    padding: 11px 20px;
+}
+
+.card-minhas-publicacoes {
+    overflow: hidden;
+    border: 1px solid #f5dce5;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(190, 91, 126, 0.09);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-minhas-publicacoes:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(190, 91, 126, 0.15);
+}
+
+.minhas-publicacoes-imagem {
+    height: 230px;
+    overflow: hidden;
+}
+
+.minhas-publicacoes-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.minhas-publicacoes-sem-imagem {
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff0f5;
+    font-size: 65px;
+}
+
+.publicacao-etiqueta {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #ffe5ee;
+    color: #bd5278;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card-minhas-publicacoes h5 {
+    color: #9e4e6e;
+    font-weight: 700;
+}
+
+.btn-editar-publicacao {
+    border: 1px solid #e9cbd7;
+    color: #a66d83;
+    background: #fff7fa;
+}
+
+.btn-editar-publicacao:hover {
+    background: #fce8ef;
+    color: #944b69;
+}
+
+.btn-excluir-publicacao {
+    border: 1px solid #f0cbd0;
+    color: #c45d70;
+    background: #fff8f8;
+}
+
+.btn-excluir-publicacao:hover {
+    background: #fce6e9;
+    color: #a63e54;
+}
+
+.minhas-publicacoes-vazio {
+    background: #fff;
+    border: 1px solid #f5dce5;
+    border-radius: 22px;
+    padding: 55px 25px;
+    box-shadow: 0 8px 25px rgba(190, 91, 126, 0.08);
+}
+
+.vazio-icone {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.minhas-publicacoes-vazio h3 {
+    color: #bd5278;
+    font-weight: 700;
+}
+
+.minhas-publicacoes-vazio p {
+    color: #947b85;
+    max-width: 480px;
+    margin: 12px auto 22px;
+}
+
+@media (max-width: 576px) {
+    .minhas-publicacoes-vazio {
+        padding: 35px 18px;
+    }
+
+    .minhas-publicacoes-cabecalho h1 {
+        font-size: 1.7rem;
+    }
+
+    .btn-nova-publicacao {
+        width: 100%;
+    }
 }

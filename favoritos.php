@@ -3,88 +3,85 @@ require_once "verificarLogin.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
-<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Favoritas</title>
+    <title>Flores Favoritas - Florescer</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
 
+    <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
         <div class="container">
 
-            <a class="navbar-brand fw-bold" href="telaPrincipal.html">
+            <a class="navbar-brand fw-bold" href="telaPrincipal.php">
                 🌸 Florescer
             </a>
 
-            <a href="telaPrincipal.html" class="btn btn-light btn-sm">
+            <a href="telaPrincipal.php" class="btn btn-light btn-sm">
                 Voltar
             </a>
 
         </div>
-
     </nav>
 
     <main>
         <div class="container py-5">
+
             <div class="text-center mb-5">
                 <h2 class="titulo">
                     ❤️ Minhas Flores Favoritas
                 </h2>
+
                 <p class="text-muted">
-                    Estas são as flores que você adicionou aos seus favoritos
+                    Estas são as flores que você adicionou aos seus favoritos.
                 </p>
             </div>
+
             <div class="row justify-content-center g-4">
+
                 <div class="col-md-6 col-lg-5">
+
                     <div class="card card-menu shadow-sm h-100">
-                        <img src="imagens/girassol.webp" class="card-img-top" alt="Girassol">
+
+                        <img
+                            src="imagens/girassol.webp"
+                            class="card-img-top"
+                            alt="Girassol">
+
                         <div class="card-body">
+
                             <h5>Girassol</h5>
+
                             <p>
-                                Símbolo de alegria, energia e prosperidade. Uma das flores mais admiradas pela sua
-                                beleza.
+                                Símbolo de alegria, energia e prosperidade.
+                                Uma das flores mais admiradas pela sua beleza.
                             </p>
+
                             <span class="badge bg-warning text-dark">
                                 Favorita ❤️
                             </span>
+
                             <div class="mt-3">
                                 <a href="detalhesGirassol.html" class="btn btn-rosa w-100">
                                     Ver detalhes
                                 </a>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
-                <div class="col-md-6 col-lg-5">
-                    <div class="card card-menu shadow-sm h-100">
-                        <img src="imagens/lirio.jpg" class="card-img-top" alt="Lírio">
-                        <div class="card-body">
-                            <h5>Lírio</h5>
-                            <p>
-                                Representa paz, pureza e elegância, sendo muito utilizado em jardins e arranjos florais.
-                            </p>
-                            <span class="badge bg-secondary">
-                                Favorita ❤️
-                            </span>
-                            <div class="mt-3">
-                                <a href="detalhesLirio.html" class="btn btn-rosa w-100">
-                                    Ver detalhes
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </main>
+
     <footer class="text-center py-4 mt-5">
 
         <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
@@ -102,8 +99,8 @@ require_once "verificarLogin.php";
         </small>
 
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>

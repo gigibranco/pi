@@ -1,4 +1,3 @@
--- Estrutura do banco Florescer
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_completo VARCHAR(150) NOT NULL,

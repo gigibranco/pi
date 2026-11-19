@@ -15,10 +15,10 @@ require_once "verificarAdmin.php";
 
     <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="admin.html">🌸 Florescer | Administração</a>
+            <a class="navbar-brand fw-bold" href="admin.php">🌸 Florescer | Administração</a>
             <div class="d-flex align-items-center gap-2">
                 <span class="text-white me-2">Administrador</span>
-                <a href="index.html" class="btn btn-light btn-sm">Sair</a>
+                <a href="index.php" class="btn btn-light btn-sm">Sair</a>
             </div>
         </div>
     </nav>
@@ -29,7 +29,7 @@ require_once "verificarAdmin.php";
                 <div class="card-body p-4 p-md-5">
                     <div class="d-flex justify-content-between align-items-center mb-4 gap-3">
                         <h2 class="titulo mb-0">✏️ Edição de Publicação</h2>
-                        <a href="adminPublicacoes.html" class="btn btn-outline-secondary">Voltar</a>
+                        <a href="adminPublicacoes.php" class="btn btn-outline-secondary">Voltar</a>
                     </div>
                     <div class="alert alert-info">Altere somente as informações que precisam de correção.</div>
                     <form onsubmit="salvarEdicao(event)">
@@ -57,7 +57,7 @@ require_once "verificarAdmin.php";
                         </div>
                         <div class="d-flex flex-wrap gap-2">
                             <button type="submit" class="btn btn-rosa">Salvar alterações</button>
-                            <a href="adminPublicacoes.html" class="btn btn-outline-secondary">Cancelar</a>
+                            <a href="adminPublicacoes.php" class="btn btn-outline-secondary">Cancelar</a>
                         </div>
                     </form>
                 </div>

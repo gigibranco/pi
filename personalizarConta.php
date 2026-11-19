@@ -15,11 +15,11 @@
 
         <div class="container">
 
-            <a class="navbar-brand fw-bold" href="menuPrincipal.html">
+            <a class="navbar-brand fw-bold" href="menuPrincipal.php">
                 🌸 Florescer
             </a>
 
-            <a href="telaPrincipal.html" class="btn btn-light btn-sm">
+            <a href="telaPrincipal.php" class="btn btn-light btn-sm">
                 Voltar
             </a>
 

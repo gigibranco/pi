@@ -15,10 +15,10 @@ require_once "verificarAdmin.php";
 
     <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="admin.html">🌸 Florescer | Administração</a>
+            <a class="navbar-brand fw-bold" href="admin.php">🌸 Florescer | Administração</a>
             <div class="d-flex align-items-center gap-2">
                 <span class="text-white me-2">Administrador</span>
-                <a href="index.html" class="btn btn-light btn-sm">Sair</a>
+                <a href="index.php" class="btn btn-light btn-sm">Sair</a>
             </div>
         </div>
     </nav>
@@ -36,7 +36,7 @@ require_once "verificarAdmin.php";
                             <div class="icone">📝</div>
                             <h5>Gerenciamento de Publicações</h5>
                             <p>Visualize as publicações cadastradas e edite ou exclua conteúdos incorretos.</p>
-                            <a href="adminPublicacoes.html" class="btn btn-rosa">Gerenciar publicações</a>
+                            <a href="adminPublicacoes.php" class="btn btn-rosa">Gerenciar publicações</a>
                         </div>
                     </div>
                 </div>
@@ -46,13 +46,13 @@ require_once "verificarAdmin.php";
                             <div class="icone">👥</div>
                             <h5>Gerenciamento de Usuários</h5>
                             <p>Consulte os usuários registrados na plataforma.</p>
-                            <a href="adminUsuarios.html" class="btn btn-rosa">Gerenciar usuários</a>
+                            <a href="adminUsuarios.php" class="btn btn-rosa">Gerenciar usuários</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-4">
-                <a href="telaPrincipal.html" class="btn btn-outline-secondary">Voltar ao Florescer</a>
+                <a href="telaPrincipal.php" class="btn btn-outline-secondary">Voltar ao Florescer</a>
             </div>
         </div>
     </main>

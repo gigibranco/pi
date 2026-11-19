@@ -1,5 +1,21 @@
 <?php
 require_once "verificarAdmin.php";
+require_once "config/banco.php";
+
+
+$sql = "SELECT 
+            publicacoes.*,
+            usuarios.nome_completo,
+            usuarios.nome_usuario
+        FROM publicacoes
+        INNER JOIN usuarios ON publicacoes.usuario_id = usuarios.id
+        ORDER BY publicacoes.data_cadastro DESC";
+
+$resultado = mysqli_query($conn, $sql);
+
+if (!$resultado) {
+    die("Erro ao buscar as publicações.");
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,89 +31,183 @@ require_once "verificarAdmin.php";
 
     <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="admin.html">🌸 Florescer | Administração</a>
+            <a class="navbar-brand fw-bold" href="admin.php">🌸 Florescer | Administração</a>
             <div class="d-flex align-items-center gap-2">
                 <span class="text-white me-2">Administrador</span>
-                <a href="index.html" class="btn btn-light btn-sm">Sair</a>
+                <a href="index.php" class="btn btn-light btn-sm">Sair</a>
             </div>
         </div>
     </nav>
 
     <main>
         <div class="container py-5">
+
             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
                 <div>
                     <h2 class="titulo">📝 Gerenciamento de Publicações</h2>
-                    <p class="text-muted mb-0">Consulte as publicações e verifique se as informações estão corretas.</p>
+                    <p class="text-muted mb-0">
+                        Consulte as publicações e verifique se as informações estão corretas.
+                    </p>
                 </div>
-                <a href="admin.html" class="btn btn-outline-secondary">Voltar</a>
+
+                <a href="admin.php" class="btn btn-outline-secondary">Voltar</a>
             </div>
+
             <div class="card border-0 shadow-sm p-3 mb-4">
                 <label for="pesquisaPublicacao" class="form-label">Pesquisar publicação</label>
-                <div class="input-group">
-                    <input id="pesquisaPublicacao" type="search" class="form-control" placeholder="Digite o nome da flor ou do autor">
-                    <button class="btn btn-rosa" type="button" onclick="filtrarPublicacoes()">Pesquisar</button>
-                </div>
+
+                <input
+                    id="pesquisaPublicacao"
+                    type="search"
+                    class="form-control"
+                    placeholder="Digite o nome da flor ou do autor">
             </div>
+
             <div class="row g-4" id="listaPublicacoes">
-                <div class="col-md-6 col-lg-4 item-publicacao" data-pesquisa="camelia ornamental usuario exemplo">
-                    <div class="card card-menu shadow-sm h-100">
-                        <img src="imagens/carmelia.webp" class="card-img-top" alt="Camélia">
-                        <div class="card-body">
-                            <span class="badge bg-pink mb-2">Publicação</span>
-                            <h5>🌺 Camélia</h5>
-                            <p class="mb-2"><strong>Categoria:</strong> Ornamental</p>
-                            <p class="small text-muted">Publicado por: usuário exemplo</p>
-                            <div class="d-flex flex-wrap gap-2">
-                                <a href="adminVisualizarPublicacao.html" class="btn btn-rosa flex-grow-1">Visualizar</a>
-                                <a href="adminEditarPublicacao.html" class="btn btn-outline-secondary">Editar</a>
-                                <a href="adminExcluirPublicacao.html" class="btn btn-outline-danger">Excluir</a>
+
+                <?php if (mysqli_num_rows($resultado) > 0): ?>
+
+                    <?php while ($flor = mysqli_fetch_assoc($resultado)): ?>
+
+                        <?php
+                        $id = (int) $flor["id"];
+                        $nomeFlor = htmlspecialchars($flor["nome_flor"]);
+                        $categoria = htmlspecialchars($flor["categoria"]);
+                        $autor = htmlspecialchars($flor["nome_completo"]);
+                        $usuario = htmlspecialchars($flor["nome_usuario"]);
+                        $pesquisa = strtolower(
+                            $flor["nome_flor"] . " " .
+                            $flor["nome_completo"] . " " .
+                            $flor["nome_usuario"] . " " .
+                            $flor["categoria"]
+                        );
+                        ?>
+
+                        <div
+                            class="col-md-6 col-lg-4 item-publicacao"
+                            data-pesquisa="<?= htmlspecialchars($pesquisa, ENT_QUOTES, 'UTF-8') ?>">
+
+                            <div class="card card-menu shadow-sm h-100">
+
+                                <?php if (!empty($flor["imagem"]) && file_exists(__DIR__ . "/" . $flor["imagem"])): ?>
+
+                                    <img
+                                        src="<?= htmlspecialchars($flor["imagem"]) ?>"
+                                        class="card-img-top"
+                                        alt="<?= $nomeFlor ?>"
+                                        style="height: 220px; object-fit: cover;">
+
+                                <?php else: ?>
+
+                                    <div class="bg-light text-center py-5">
+                                        <span style="font-size: 60px;">🌺</span>
+                                    </div>
+
+                                <?php endif; ?>
+
+                                <div class="card-body">
+
+                                    <span class="badge bg-pink mb-2">Publicação</span>
+
+                                    <h5><?= $nomeFlor ?></h5>
+
+                                    <p class="mb-2">
+                                        <strong>Categoria:</strong> <?= $categoria ?>
+                                    </p>
+
+                                    <p class="small text-muted">
+                                        Publicado por: <?= $autor ?>
+                                    </p>
+
+                                    <div class="d-flex flex-wrap gap-2">
+
+                                        <a
+                                            href="adminVisualizarPublicacao.php?id=<?= $id ?>"
+                                            class="btn btn-rosa flex-grow-1">
+                                            Visualizar
+                                        </a>
+
+                                        <a
+                                            href="adminEditarPublicacao.php?id=<?= $id ?>"
+                                            class="btn btn-outline-secondary">
+                                            Editar
+                                        </a>
+
+                                        <a
+                                            href="adminExcluirPublicacao.php?id=<?= $id ?>"
+                                            class="btn btn-outline-danger"
+                                            onclick="return confirm('Deseja realmente excluir esta publicação?');">
+                                            Excluir
+                                        </a>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                    <?php endwhile; ?>
+
+                <?php else: ?>
+
+                    <div class="col-12 text-center py-5">
+                        <h4>🌷 Nenhuma publicação cadastrada.</h4>
+                        <p class="text-muted">
+                            Quando os usuários cadastrarem flores, elas aparecerão aqui.
+                        </p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 item-publicacao" data-pesquisa="margarida ornamental usuario exemplo">
-                    <div class="card card-menu shadow-sm h-100">
-                        <img src="imagens/margarida.webp" class="card-img-top" alt="Margarida">
-                        <div class="card-body">
-                            <span class="badge bg-pink mb-2">Publicação</span>
-                            <h5>🌼 Margarida</h5>
-                            <p class="mb-2"><strong>Categoria:</strong> Ornamental</p>
-                            <p class="small text-muted">Publicado por: usuário exemplo</p>
-                            <div class="d-flex flex-wrap gap-2">
-                                <a href="adminVisualizarPublicacao.html" class="btn btn-rosa flex-grow-1">Visualizar</a>
-                                <a href="adminEditarPublicacao.html" class="btn btn-outline-secondary">Editar</a>
-                                <a href="adminExcluirPublicacao.html" class="btn btn-outline-danger">Excluir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p id="semResultado" class="text-muted text-center d-none">Nenhuma publicação encontrada.</p>
+
+                <?php endif; ?>
+
+                <p id="semResultado" class="text-muted text-center d-none">
+                    Nenhuma publicação encontrada.
+                </p>
+
             </div>
         </div>
     </main>
+
     <footer class="text-center py-4 mt-5">
         <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
-            <circle cx="32" cy="18" r="10"/><circle cx="32" cy="46" r="10"/>
-            <circle cx="18" cy="32" r="10"/><circle cx="46" cy="32" r="10"/>
+            <circle cx="32" cy="18" r="10"/>
+            <circle cx="32" cy="46" r="10"/>
+            <circle cx="18" cy="32" r="10"/>
+            <circle cx="46" cy="32" r="10"/>
             <circle cx="32" cy="32" r="9" style="fill:#FFDCE8;"/>
         </svg>
-        <br><small class="text-muted">Projeto Florescer © 2026</small>
+        <br>
+        <small class="text-muted">Projeto Florescer © 2026</small>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         function filtrarPublicacoes() {
             const termo = document.getElementById('pesquisaPublicacao').value.toLowerCase().trim();
             const itens = document.querySelectorAll('.item-publicacao');
             let encontrados = 0;
+
             itens.forEach(function(item) {
                 const corresponde = item.dataset.pesquisa.includes(termo);
                 item.classList.toggle('d-none', !corresponde);
-                if (corresponde) encontrados++;
+
+                if (corresponde) {
+                    encontrados++;
+                }
             });
-            document.getElementById('semResultado').classList.toggle('d-none', encontrados > 0);
+
+            const semResultado = document.getElementById('semResultado');
+
+            if (semResultado) {
+                semResultado.classList.toggle('d-none', encontrados > 0);
+            }
         }
+
         document.getElementById('pesquisaPublicacao').addEventListener('input', filtrarPublicacoes);
     </script>
+
 </body>
 </html>
+
+<?php
+mysqli_close($conn);
+?>

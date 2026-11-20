@@ -4,6 +4,10 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $logado = isset($_SESSION["usuario_id"]);
+
+$administrador = $logado &&
+    isset($_SESSION["tipo"]) &&
+    $_SESSION["tipo"] === "administrador";
 ?>
 
 <!DOCTYPE html>
@@ -28,13 +32,21 @@ $logado = isset($_SESSION["usuario_id"]);
                 Florescer
             </a>
 
-            <div class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
 
                 <?php if ($logado): ?>
 
                     <span class="usuario-navbar">
                         Olá, <?= htmlspecialchars($_SESSION["nome_usuario"]) ?>!
                     </span>
+
+                    <?php if ($administrador): ?>
+
+                        <a href="admin.php" class="btn btn-navbar">
+                            Painel Administrativo
+                        </a>
+
+                    <?php endif; ?>
 
                     <a href="sair.php" class="btn btn-navbar">
                         Sair
@@ -67,13 +79,13 @@ $logado = isset($_SESSION["usuario_id"]);
                 <h1>Bem-vindo ao Florescer</h1>
 
                 <p class="principal-subtitulo">
-                    Um espaço dedicado à beleza e ao conhecimento das flores.
+                    Um espaço dedicado à beleza e ao conhecimento das flores
                 </p>
 
                 <?php if (!$logado): ?>
                     <div class="aviso-visitante">
                         <span>🌷</span>
-                        Você está acessando como visitante.
+                        Você está acessando como visitante
                         Crie uma conta para aproveitar todas as funcionalidades!
                     </div>
                 <?php endif; ?>
@@ -99,10 +111,10 @@ $logado = isset($_SESSION["usuario_id"]);
                             <h5>Catálogo</h5>
 
                             <p>
-                                Explore diferentes espécies e descubra suas características.
+                                Explore diferentes espécies e descubra suas características
                             </p>
 
-                            <a href="catalogo.html" class="btn btn-rosa btn-card">
+                            <a href="catalogo.php" class="btn btn-rosa btn-card">
                                 Explorar catálogo
                                 <span>→</span>
                             </a>
@@ -120,7 +132,7 @@ $logado = isset($_SESSION["usuario_id"]);
                             <h5>Favoritos</h5>
 
                             <p>
-                                Guarde suas flores preferidas e encontre-as facilmente.
+                                Guarde suas flores preferidas e encontre-as facilmente
                             </p>
 
                             <?php if ($logado): ?>
@@ -159,7 +171,7 @@ $logado = isset($_SESSION["usuario_id"]);
                             <h5>Minhas Publicações</h5>
 
                             <p>
-                                Consulte e organize as flores que você cadastrou.
+                                Consulte e organize as flores que você cadastrou
                             </p>
 
                             <?php if ($logado): ?>
@@ -192,7 +204,7 @@ $logado = isset($_SESSION["usuario_id"]);
                             <h5>Nova Flor</h5>
 
                             <p>
-                                Compartilhe uma nova espécie com a comunidade.
+                                Compartilhe uma nova espécie com a comunidade
                             </p>
 
                             <?php if ($logado): ?>
@@ -225,7 +237,7 @@ $logado = isset($_SESSION["usuario_id"]);
                             <h5>Meu Perfil</h5>
 
                             <p>
-                                Gerencie suas informações e personalize sua conta.
+                                Gerencie suas informações e personalize sua conta
                             </p>
 
                             <?php if ($logado): ?>
@@ -253,7 +265,7 @@ $logado = isset($_SESSION["usuario_id"]);
 
             <div class="principal-frase text-center">
                 <span>✿</span>
-                Cultive conhecimento, compartilhe descobertas e deixe florescer.
+                Cultive conhecimento, compartilhe descobertas e deixe florescer
                 <span>✿</span>
             </div>
 
@@ -281,7 +293,7 @@ $logado = isset($_SESSION["usuario_id"]);
                         <div class="modal-flor">🌸</div>
 
                         <p id="mensagemCadastro" class="mb-0">
-                            Você precisa ter uma conta para utilizar esta funcionalidade.
+                            Você precisa ter uma conta para utilizar esta funcionalidade
                             Cadastre-se gratuitamente!
                         </p>
 
@@ -310,7 +322,7 @@ $logado = isset($_SESSION["usuario_id"]);
         <div class="footer-flor">❀</div>
 
         <small>
-            Florescer © 2026 · Cultivando conhecimento
+            Florescer © 2026
         </small>
 
     </footer>

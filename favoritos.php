@@ -8,96 +8,100 @@ require_once "verificarLogin.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Flores Favoritas - Florescer</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="pagina-favoritos">
 
-    <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-florescer shadow-sm">
         <div class="container">
 
-            <a class="navbar-brand fw-bold" href="telaPrincipal.php">
-                🌸 Florescer
+            <a class="navbar-brand marca-navbar" href="telaPrincipal.php">
+                <span class="marca-icone">❀</span>
+                Florescer
             </a>
 
-            <a href="telaPrincipal.php" class="btn btn-light btn-sm">
-                Voltar
+            <a href="telaPrincipal.php" class="btn btn-navbar">
+                ← Voltar
             </a>
 
         </div>
     </nav>
 
-    <main>
+    <main class="favoritos-conteudo">
+
         <div class="container py-5">
 
-            <div class="text-center mb-5">
-                <h2 class="titulo">
-                    ❤️ Minhas Flores Favoritas
-                </h2>
+            <header class="favoritos-cabecalho text-center mb-5">
 
-                <p class="text-muted">
-                    Estas são as flores que você adicionou aos seus favoritos.
+                <div class="favoritos-icone">♡</div>
+
+                <h1>Minhas Flores Favoritas</h1>
+
+                <p>
+                    Um cantinho especial para guardar as flores que encantam você
                 </p>
-            </div>
+
+                <div class="principal-divisor">
+                    <span></span>
+                    ❀
+                    <span></span>
+                </div>
+
+            </header>
 
             <div class="row justify-content-center g-4">
 
-                <div class="col-md-6 col-lg-5">
+                <div class="col-md-7 col-lg-5">
 
-                    <div class="card card-menu shadow-sm h-100">
+                    <div class="card card-menu card-favorito h-100">
 
-                        <img
-                            src="imagens/girassol.webp"
-                            class="card-img-top"
-                            alt="Girassol">
+                        <div class="favorito-imagem">
+                            <img
+                                src="imagens/girassol.webp"
+                                alt="Girassol">
+                            <span class="favorito-selo">♡ Favorita</span>
+                        </div>
 
-                        <div class="card-body">
+                        <div class="card-body text-center">
 
-                            <h5>Girassol</h5>
+                            <h3>Girassol</h3>
 
-                            <p>
+                            <p class="favorito-nome-cientifico">
+                                Helianthus annuus
+                            </p>
+
+                            <p class="favorito-descricao">
                                 Símbolo de alegria, energia e prosperidade.
                                 Uma das flores mais admiradas pela sua beleza.
                             </p>
 
-                            <span class="badge bg-warning text-dark">
-                                Favorita ❤️
-                            </span>
-
-                            <div class="mt-3">
-                                <a href="detalhesGirassol.html" class="btn btn-rosa w-100">
-                                    Ver detalhes
-                                </a>
-                            </div>
+                            <a href="detalhesGirassol.html?voltar=favoritos" class="btn btn-rosa w-100">
+                                        Conhecer flor
+                            </a>
 
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
+
+            <p class="favoritos-frase text-center">
+                "Assim como as flores, cada detalhe tem sua beleza" 🌷
+            </p>
+
         </div>
+
     </main>
 
-    <footer class="text-center py-4 mt-5">
-
-        <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
-            <circle cx="32" cy="18" r="10" />
-            <circle cx="32" cy="46" r="10" />
-            <circle cx="18" cy="32" r="10" />
-            <circle cx="46" cy="32" r="10" />
-            <circle cx="32" cy="32" r="9" style="fill:#FFDCE8;" />
-        </svg>
-
-        <br>
-
-        <small class="text-muted">
-            Projeto Florescer © 2026
-        </small>
-
+    <footer class="footer-florescer text-center py-4">
+        <small>Florescer © 2026</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

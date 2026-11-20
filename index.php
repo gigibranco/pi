@@ -1,4 +1,3 @@
-
 <?php
 $mensagemErro = "";
 
@@ -46,7 +45,7 @@ if (isset($_GET["erro"])) {
 
                     <h2 class="login-boas-vindas">Que bom ter você aqui!</h2>
                     <p class="login-instrucao">
-                        Entre na sua conta para continuar.
+                        Entre na sua conta para continuar
                     </p>
 
                     <?php if ($mensagemErro !== ""): ?>
@@ -105,13 +104,13 @@ if (isset($_GET["erro"])) {
             </div>
 
             <p class="login-frase">
-                <span>✿</span> Cada flor tem seu tempo para florescer. <span>✿</span>
+                <span>✿</span> Cada flor tem seu tempo para florescer <span>✿</span>
             </p>
         </section>
     </main>
 
     <footer class="text-center py-3 login-footer">
-        <small class="text-muted">Florescer © 2026 · Cultivando conhecimento</small>
+        <small class="text-muted">Florescer © 2026</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

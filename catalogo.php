@@ -70,7 +70,9 @@ if (!$resultado) {
                             Helianthus annuus
                         </p>
 
-                        <a href="detalhesGirassol.html" class="btn btn-rosa">
+                       <a
+                            href="detalhesGirassol.html?voltar=catalogo"
+                            class="btn btn-rosa">
                             Conhecer flor
                         </a>
 

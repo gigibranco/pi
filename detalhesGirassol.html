@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -11,7 +12,7 @@
 </head>
 
 <body class="pagina-detalhes">
-    
+
     <nav class="navbar navbar-expand-lg navbar-florescer shadow-sm">
         <div class="container">
 
@@ -20,7 +21,7 @@
                 Florescer
             </a>
 
-            <a href="catalogo.html" class="btn btn-navbar">
+            <a href="catalogo.php" id="btnVoltar" class="btn btn-navbar">
                 ← Voltar ao catálogo
             </a>
 
@@ -159,14 +160,22 @@
     </main>
 
     <footer class="footer-florescer text-center py-4">
-
-        <div class="footer-flor">❀</div>
-
-        <small>
-            Florescer © 2026 · Cultivando conhecimento
-        </small>
-
+        <small>Florescer © 2026</small>
     </footer>
+
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        const origem = parametros.get("voltar");
+        const botaoVoltar = document.getElementById("btnVoltar");
+
+        if (origem === "favoritos") {
+            botaoVoltar.href = "favoritos.php";
+            botaoVoltar.textContent = "← Voltar aos favoritos";
+        } else {
+            botaoVoltar.href = "catalogo.php";
+            botaoVoltar.textContent = "← Voltar ao catálogo";
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 

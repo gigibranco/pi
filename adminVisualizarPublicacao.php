@@ -1,78 +1,207 @@
 <?php
 require_once "verificarAdmin.php";
+require_once "config/banco.php";
+
+if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
+    header("Location: adminPublicacoes.php");
+    exit;
+}
+
+$id = (int) $_GET["id"];
+
+$sql = "SELECT publicacoes.*, usuarios.nome_completo, usuarios.nome_usuario
+        FROM publicacoes
+        INNER JOIN usuarios ON publicacoes.usuario_id = usuarios.id
+        WHERE publicacoes.id = ?";
+
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+
+$resultado = mysqli_stmt_get_result($stmt);
+$publicacao = mysqli_fetch_assoc($resultado);
+
+if (!$publicacao) {
+    header("Location: adminPublicacoes.php");
+    exit;
+}
+
+function e($valor) {
+    return htmlspecialchars($valor ?? "", ENT_QUOTES, "UTF-8");
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Usuários - Florescer</title>
+
+    <title>Visualizar Publicação - Florescer</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark cor-principal shadow-sm">
+<body class="pagina-admin-visualizar">
+
+    <!-- BARRA SUPERIOR PADRONIZADA -->
+
+    <nav class="navbar navbar-expand-lg navbar-florescer shadow-sm">
+
         <div class="container">
-            <a class="navbar-brand fw-bold" href="admin.php">🌸 Florescer | Administração</a>
+
+            <a class="navbar-brand marca-navbar" href="admin.php">
+                <span class="marca-icone">🌸</span>
+                Florescer | Administração
+            </a>
+
             <div class="d-flex align-items-center gap-2">
-                <span class="text-white me-2">Administrador</span>
-                <a href="index.php" class="btn btn-light btn-sm">Sair</a>
+
+                <span class="admin-identificacao">
+                    Administrador
+                </span>
+
+                <a href="index.php" class="btn btn-sair">
+                    Sair
+                </a>
+
             </div>
+
         </div>
+
     </nav>
 
-    <main>
-        <div class="container py-5">
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
-                <div>
-                    <h2 class="titulo">👥 Gerenciamento de Usuários</h2>
-                    <p class="text-muted mb-0">Consulte os usuários cadastrados no Florescer.</p>
-                </div>
-                <a href="admin.php" class="btn btn-outline-secondary">Voltar</a>
+    <!-- CONTEÚDO -->
+
+    <main class="container conteudo-admin-visualizar">
+
+        <div class="cabecalho-admin-visualizar">
+
+            <div>
+                <h2>Visualizar publicação</h2>
+
+                <p>
+                    Confira as informações da flor cadastrada no Florescer
+                </p>
             </div>
-            <div class="card border-0 shadow-sm p-3 mb-4">
-                <label for="pesquisaUsuario" class="form-label">Pesquisar usuário</label>
-                <input id="pesquisaUsuario" type="search" class="form-control" placeholder="Digite o nome, usuário ou e-mail">
-            </div>
-            <div class="card border-0 shadow-sm">
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0">
-                        <thead class="table-light"><tr><th>Nome</th><th>Usuário</th><th>E-mail</th><th>Tipo</th></tr></thead>
-                        <tbody id="tabelaUsuarios">
-                            <tr data-pesquisa="ana silva ana ana exemplo com usuario"><td>Ana Silva</td><td>@ana</td><td>ana@exemplo.com</td><td><span class="badge bg-secondary">Usuário</span></td></tr>
-                            <tr data-pesquisa="bruno costa bruno bruno exemplo com usuario"><td>Bruno Costa</td><td>@bruno</td><td>bruno@exemplo.com</td><td><span class="badge bg-secondary">Usuário</span></td></tr>
-                            <tr data-pesquisa="administrador admin admin florescer exemplo com administrador"><td>Administrador</td><td>@admin</td><td>admin@florescer.exemplo</td><td><span class="badge bg-pink">Administrador</span></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p id="semUsuario" class="text-muted text-center p-3 mb-0 d-none">Nenhum usuário encontrado.</p>
-            </div>
-            <p class="small text-muted mt-3">Os nomes e e-mails exibidos são exemplos para a montagem da interface.</p>
+
+            <a href="adminPublicacoes.php" class="btn-voltar-admin">
+                ← Voltar
+            </a>
+
         </div>
+
+        <section class="card-publicacao-visualizar">
+
+            <?php if (!empty($publicacao["imagem"])): ?>
+
+                <div class="imagem-publicacao-visualizar">
+
+                    <img
+                        src="<?= e($publicacao["imagem"]) ?>"
+                        alt="<?= e($publicacao["nome_flor"]) ?>">
+
+                </div>
+
+            <?php endif; ?>
+
+            <div class="dados-publicacao-visualizar">
+
+                <span class="etiqueta-publicacao">
+                    Publicação cadastrada
+                </span>
+
+                <h3>
+                    <?= e($publicacao["nome_flor"]) ?>
+                </h3>
+
+                <div class="informacoes-publicacao">
+
+                    <div>
+                        <span>Nome científico</span>
+                        <p>
+                            <?= e($publicacao["nome_cientifico"] ?: "Não informado") ?>
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>Categoria</span>
+                        <p>
+                            <?= e($publicacao["categoria"] ?: "Não informada") ?>
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>Cor</span>
+                        <p>
+                            <?= e($publicacao["cor"] ?: "Não informada") ?>
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>Publicado por</span>
+                        <p>
+                            <?= e($publicacao["nome_completo"]) ?>
+                            (@<?= e($publicacao["nome_usuario"]) ?>)
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>Data de cadastro</span>
+                        <p>
+                            <?= !empty($publicacao["data_cadastro"])
+                                ? date("d/m/Y H:i", strtotime($publicacao["data_cadastro"]))
+                                : "Não informada" ?>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="descricao-publicacao-visualizar">
+
+                    <h5>Sobre esta flor</h5>
+
+                    <p>
+                        <?= e($publicacao["descricao"] ?: "Nenhuma descrição informada.") ?>
+                    </p>
+
+                </div>
+
+                <div class="acoes-publicacao-visualizar">
+
+                    <a href="adminEditarPublicacao.php?id=<?= $id ?>" class="btn btn-rosa">
+                        Editar publicação
+                    </a>
+
+                    <a href="adminExcluirPublicacao.php?id=<?= $id ?>" class="btn btn-outline-danger">
+                        Excluir publicação
+                    </a>
+
+                    <a href="adminPublicacoes.php" class="btn btn-outline-secondary">
+                        Voltar às publicações
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
-    <footer class="text-center py-4 mt-5">
-        <svg width="28" height="28" viewBox="0 0 64 64" class="mb-2" style="fill:#E86A92;">
-            <circle cx="32" cy="18" r="10"/><circle cx="32" cy="46" r="10"/>
-            <circle cx="18" cy="32" r="10"/><circle cx="46" cy="32" r="10"/>
-            <circle cx="32" cy="32" r="9" style="fill:#FFDCE8;"/>
-        </svg>
-        <br><small class="text-muted">Projeto Florescer © 2026</small>
+
+    <!-- RODAPÉ -->
+
+    <footer class="footer-florescer text-center py-4">
+
+        <small>
+            Florescer © 2026
+        </small>
+
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('pesquisaUsuario').addEventListener('input', function() {
-            const termo = this.value.toLowerCase().trim();
-            const linhas = document.querySelectorAll('#tabelaUsuarios tr');
-            let encontrados = 0;
-            linhas.forEach(function(linha) {
-                const corresponde = linha.dataset.pesquisa.includes(termo);
-                linha.classList.toggle('d-none', !corresponde);
-                if (corresponde) encontrados++;
-            });
-            document.getElementById('semUsuario').classList.toggle('d-none', encontrados > 0);
-        });
-    </script>
+
 </body>
 </html>

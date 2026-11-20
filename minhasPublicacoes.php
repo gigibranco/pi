@@ -188,7 +188,7 @@ $resultado = mysqli_stmt_get_result($stmt);
         <div class="footer-flor">❀</div>
 
         <small>
-            Florescer © 2026 · Cultivando conhecimento
+            Florescer © 2026
         </small>
 
     </footer>

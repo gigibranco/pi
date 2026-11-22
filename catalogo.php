@@ -45,13 +45,11 @@ if (!$resultado) {
             <h1 class="titulo">Catálogo de Flores 🌸</h1>
 
             <p class="text-muted">
-                Conheça diferentes flores e descubra suas características.
+                Conheça diferentes flores e descubra suas características
             </p>
         </div>
 
         <div class="row g-4">
-
-            <!-- GIRASSOL FIXO DE EXEMPLO -->
 
             <div class="col-md-6 col-lg-4">
 
@@ -81,9 +79,6 @@ if (!$resultado) {
                 </div>
 
             </div>
-
-
-            <!-- FLORES CADASTRADAS PELOS USUÁRIOS -->
 
             <?php while ($flor = mysqli_fetch_assoc($resultado)): ?>
 

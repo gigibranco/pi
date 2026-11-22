@@ -46,8 +46,6 @@ function e($valor) {
 
 <body class="pagina-admin-visualizar">
 
-    <!-- BARRA SUPERIOR PADRONIZADA -->
-
     <nav class="navbar navbar-expand-lg navbar-florescer shadow-sm">
 
         <div class="container">
@@ -72,8 +70,6 @@ function e($valor) {
         </div>
 
     </nav>
-
-    <!-- CONTEÚDO -->
 
     <main class="container conteudo-admin-visualizar">
 
@@ -190,9 +186,6 @@ function e($valor) {
         </section>
 
     </main>
-
-    <!-- RODAPÉ -->
-
     <footer class="footer-florescer text-center py-4">
 
         <small>

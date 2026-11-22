@@ -80,10 +80,6 @@ strong {
     color: white;
 }
 
-/* ==================================
-   FORMULÁRIOS
-================================== */
-
 .form-control,
 .form-select {
     border-radius: 10px;
@@ -103,10 +99,6 @@ textarea {
 input[type=file] {
     border-radius: 10px;
 }
-
-/* ==================================
-   BOTÕES
-================================== */
 
 .btn-rosa {
     background: #E86A92;
@@ -147,9 +139,6 @@ input[type=file] {
     transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease;
 }
 
-/* ==================================
-   CAIXAS E CARTÕES
-================================== */
 
 .caixa-login,
 .caixa-cadastro,
@@ -185,9 +174,6 @@ input[type=file] {
     max-width: 100%;
 }
 
-/* ==================================
-   MENU PRINCIPAL
-================================== */
 
 .card-menu {
     border: none;
@@ -216,10 +202,6 @@ input[type=file] {
     transition: transform .3s ease;
 }
 
-/* ==================================
-   ANIMAÇÕES
-================================== */
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -235,10 +217,6 @@ input[type=file] {
 .fade-in-up {
     animation: fadeInUp .5s ease both;
 }
-
-/* ==================================
-   CARTÕES DE PUBLICAÇÕES
-================================== */
 
 .card-img-top {
     border-top-left-radius: 20px;
@@ -276,18 +254,12 @@ input[type=file] {
     padding: 8px 12px;
 }
 
-/* ==================================
-   RODAPÉ
-================================== */
 
 footer {
     background: #fff;
     border-top: 1px solid #f2d5df;
 }
 
-/* ==================================
-   TELA DE LOGIN - FLORESCER
-================================== */
 
 .pagina-login {
     background: #fff7f8;
@@ -511,10 +483,6 @@ footer {
     border-top: none;
 }
 
-/* ==================================
-   PÁGINA DE SUCESSO
-================================== */
-
 .sucesso-container {
     min-height: 100vh;
     display: flex;
@@ -565,9 +533,6 @@ footer {
     background: #bd5d83;
 }
 
-/* ==================================
-   RESPONSIVIDADE
-================================== */
 
 @media (max-width: 768px) {
 
@@ -667,15 +632,11 @@ footer {
     }
 }
 
-/* ==================================
-   TELA PRINCIPAL - FLORESCER
-================================== */
 
 .pagina-principal {
     background: #fff7f8;
 }
 
-/* Barra superior */
 
 .navbar-florescer {
     background: #fff;
@@ -718,7 +679,6 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Conteúdo principal */
 
 .principal-conteudo {
     position: relative;
@@ -784,8 +744,6 @@ footer {
     height: 1px;
     background: #efd6df;
 }
-
-/* Cartões do menu */
 
 .card-florescer {
     background: rgba(255, 255, 255, .95);
@@ -865,8 +823,6 @@ footer {
     transform: translateX(3px);
 }
 
-/* Frase decorativa */
-
 .principal-frase {
     color: #b18c9a;
     font-family: Georgia, serif;
@@ -879,8 +835,6 @@ footer {
     color: #df8eaa;
     margin: 0 6px;
 }
-
-/* Modal */
 
 .modal-florescer {
     border: 1px solid #f3dce4;
@@ -938,8 +892,6 @@ footer {
     border-color: #e9b8ca;
 }
 
-/* Rodapé */
-
 .footer-florescer {
     background: #fff;
     border-top: 1px solid #f2dce4;
@@ -952,8 +904,6 @@ footer {
     font-size: 27px;
     margin-bottom: 4px;
 }
-
-/* Responsividade */
 
 @media (max-width: 768px) {
 
@@ -1020,10 +970,6 @@ footer {
     }
 }
 
-/* ==================================
-   CATÁLOGO DE FLORES - FLORESCER
-================================== */
-
 .pagina-catalogo {
     background: #fff7f8;
 }
@@ -1035,8 +981,6 @@ footer {
         radial-gradient(circle at 95% 90%, rgba(248, 215, 226, .4), transparent 25%),
         #fff7f8;
 }
-
-/* Cabeçalho */
 
 .catalogo-cabecalho {
     margin-bottom: 42px;
@@ -1075,8 +1019,6 @@ footer {
     height: 1px;
     background: #efd6df;
 }
-
-/* Cartões das flores */
 
 .card-catalogo {
     background: #fff;
@@ -1148,8 +1090,6 @@ footer {
     transform: translateX(3px);
 }
 
-/* Frase final */
-
 .catalogo-frase {
     color: #b18c9a;
     font-family: Georgia, serif;
@@ -1162,8 +1102,6 @@ footer {
     color: #df8eaa;
     margin: 0 6px;
 }
-
-/* Responsividade */
 
 @media (max-width: 768px) {
 
@@ -1200,10 +1138,6 @@ footer {
     }
 }
 
-/* ==================================
-   DETALHES DAS FLORES - FLORESCER
-================================== */
-
 .pagina-detalhes {
     background: #fff7f8;
 }
@@ -1215,8 +1149,6 @@ footer {
         radial-gradient(circle at 95% 90%, rgba(248, 215, 226, .4), transparent 25%),
         #fff7f8;
 }
-
-/* Cabeçalho */
 
 .detalhes-cabecalho {
     margin-bottom: 35px;
@@ -1240,8 +1172,6 @@ footer {
     font-size: 15px;
 }
 
-/* Cartão principal */
-
 .detalhes-card {
     border: 1px solid #f4e1e7;
     border-radius: 24px;
@@ -1249,8 +1179,6 @@ footer {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(183, 105, 132, .11);
 }
-
-/* Imagem */
 
 .detalhes-imagem {
     height: 100%;
@@ -1271,8 +1199,6 @@ footer {
 .detalhes-imagem:hover img {
     transform: scale(1.03);
 }
-
-/* Informações */
 
 .detalhes-corpo {
     padding: 40px;
@@ -1311,8 +1237,6 @@ footer {
     margin-bottom: 23px;
 }
 
-/* Blocos de informações */
-
 .detalhes-informacoes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1348,8 +1272,6 @@ footer {
     margin: 0;
 }
 
-/* Cuidados e curiosidades */
-
 .detalhes-texto-box {
     background: #fff8fa;
     border-left: 3px solid #e88aaa;
@@ -1373,8 +1295,6 @@ footer {
     margin-bottom: 0;
 }
 
-/* Botão de favoritos */
-
 .detalhes-acoes {
     margin-top: 25px;
 }
@@ -1384,8 +1304,6 @@ footer {
     padding: 11px 20px;
     border-radius: 12px;
 }
-
-/* Frase final */
 
 .detalhes-frase {
     color: #b18c9a;
@@ -1399,8 +1317,6 @@ footer {
     color: #df8eaa;
     margin: 0 6px;
 }
-
-/* Responsividade */
 
 @media (max-width: 991px) {
 
@@ -1458,8 +1374,6 @@ body.pagina-detalhes {
     background: #fff7f8;
     outline: none;
 }
-
-/* CADASTRO DE FLOR */
 
 body.pagina-cadastro-flor {
     background: #fff7f8;
@@ -1559,8 +1473,6 @@ body.pagina-cadastro-flor {
         font-size: 1.6rem;
     }
 }
-
-/* MINHAS PUBLICAÇÕES */
 
 body.pagina-minhas-publicacoes {
     background: #fff7f8;
@@ -1707,8 +1619,6 @@ body.pagina-minhas-publicacoes {
     }
 }
 
-/* FLORES FAVORITAS */
-
 body.pagina-favoritos {
     background: #fff7f8;
 }
@@ -1813,8 +1723,6 @@ body.pagina-favoritos {
         height: 230px;
     }
 }
-
-/* MEU PERFIL */
 
 body.pagina-perfil {
     background: #fff7f8;
@@ -1949,8 +1857,6 @@ body.pagina-perfil {
         font-size: 1.7rem;
     }
 }
-
-/* PAINEL DO ADMINISTRADOR */
 
 .pagina-admin {
     background: linear-gradient(135deg, #fff7f9, #fff0f5);
@@ -2102,8 +2008,6 @@ body.pagina-perfil {
     color: #947b85;
 }
 
-/* EDIÇÃO DE PUBLICAÇÃO - ADMINISTRADOR */
-
 .pagina-edicao-admin {
     background: linear-gradient(135deg, #fff7f9, #fff0f5);
     min-height: 100vh;
@@ -2236,8 +2140,6 @@ body.pagina-perfil {
         padding: 25px 20px !important;
     }
 }
-
-/* GERENCIAMENTO DE USUÁRIOS - ADMINISTRADOR */
 
 .pagina-admin-usuarios {
     background: linear-gradient(135deg, #fff7f9, #fff0f5);
@@ -2389,8 +2291,6 @@ body.pagina-perfil {
         padding: 30px 0;
     }
 }
-
-/* GERENCIAMENTO DE PUBLICAÇÕES - ADMINISTRADOR */
 
 .pagina-admin-publicacoes {
     background: linear-gradient(135deg, #fff7f9, #fff0f5);
@@ -2613,11 +2513,6 @@ body.pagina-perfil {
         flex: 1 1 auto;
     }
 }
-
-/* ========================================
-   VISUALIZAR PUBLICAÇÃO
-======================================== */
-
 .pagina-visualizar-publicacao {
     min-height: 100vh;
     display: flex;
@@ -2744,10 +2639,6 @@ body.pagina-perfil {
     }
 }
 
-/* ========================================
-   PAINEL ADMINISTRATIVO
-======================================== */
-
 .pagina-admin {
     background: #fff7f8;
     min-height: 100vh;
@@ -2862,10 +2753,6 @@ body.pagina-perfil {
     border-top: 1px solid #efd5df;
     color: #947b85;
 }
-
-/* ========================================
-   GERENCIAMENTO DE PUBLICAÇÕES - ADMIN
-======================================== */
 
 .pagina-admin-publicacoes {
     background: #fff7f8;
@@ -3108,19 +2995,12 @@ body.pagina-perfil {
 
 }
 
-
-/* ==========================================
-   VISUALIZAÇÃO DE PUBLICAÇÃO - ADMIN
-========================================== */
-
 body.pagina-admin-visualizar {
     background: #fff7f8 !important;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
-/* Barra superior: mesmo padrão do painel */
 
 .pagina-admin-visualizar .navbar-florescer {
     background: #fff;
@@ -3163,8 +3043,6 @@ body.pagina-admin-visualizar {
     color: white;
 }
 
-/* Conteúdo principal */
-
 .conteudo-admin-visualizar {
     flex: 1;
     width: 100%;
@@ -3172,8 +3050,6 @@ body.pagina-admin-visualizar {
     padding-top: 55px;
     padding-bottom: 65px;
 }
-
-/* Cabeçalho */
 
 .cabecalho-admin-visualizar {
     display: flex;
@@ -3212,8 +3088,6 @@ body.pagina-admin-visualizar {
     color: #c75b85;
 }
 
-/* Cartão da publicação */
-
 .card-publicacao-visualizar {
     background: #ffffff;
     border: 1px solid #f3dce5;
@@ -3221,8 +3095,6 @@ body.pagina-admin-visualizar {
     overflow: hidden;
     box-shadow: 0 7px 22px rgba(183, 105, 132, 0.08);
 }
-
-/* Imagem */
 
 .imagem-publicacao-visualizar {
     background: #fffafa;
@@ -3238,8 +3110,6 @@ body.pagina-admin-visualizar {
     object-fit: contain;
     border-radius: 16px;
 }
-
-/* Informações */
 
 .dados-publicacao-visualizar {
     padding: 40px;
@@ -3262,8 +3132,6 @@ body.pagina-admin-visualizar {
     font-weight: 700;
     margin-bottom: 28px;
 }
-
-/* Grade de informações */
 
 .informacoes-publicacao {
     display: grid;
@@ -3291,9 +3159,6 @@ body.pagina-admin-visualizar {
     margin: 0;
     overflow-wrap: anywhere;
 }
-
-/* Descrição */
-
 .descricao-publicacao-visualizar {
     border-top: 1px solid #f3dce5;
     margin-top: 30px;
@@ -3319,7 +3184,6 @@ body.pagina-admin-visualizar {
     margin-bottom: 0;
 }
 
-/* Botões */
 
 .acoes-publicacao-visualizar {
     display: flex;
@@ -3333,8 +3197,6 @@ body.pagina-admin-visualizar {
     padding: 10px 17px;
 }
 
-/* Botão editar */
-
 .acoes-publicacao-visualizar .btn-rosa {
     background: #df7195;
     color: white;
@@ -3345,8 +3207,6 @@ body.pagina-admin-visualizar {
     background: #cc5d83;
     color: white;
 }
-
-/* Botão excluir */
 
 .acoes-publicacao-visualizar .btn-outline-danger {
     color: #b77c8e;
@@ -3359,8 +3219,6 @@ body.pagina-admin-visualizar {
     border-color: #e9cbd6;
 }
 
-/* Botão voltar às publicações */
-
 .acoes-publicacao-visualizar .btn-outline-secondary {
     color: #947b85;
     border-color: #e7dce1;
@@ -3371,16 +3229,12 @@ body.pagina-admin-visualizar {
     color: #795b68;
 }
 
-/* Rodapé */
-
 .pagina-admin-visualizar .footer-florescer {
     background: #fff;
     border-top: 1px solid #f2dce4;
     color: #a18c94;
     font-size: 12px;
 }
-
-/* Responsividade */
 
 @media (max-width: 576px) {
 

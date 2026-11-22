@@ -91,8 +91,6 @@ if (!$resultado) {
 
             </header>
 
-            <!-- PESQUISA -->
-
             <div class="card pesquisa-admin-publicacoes">
 
                 <div class="card-body">
@@ -110,8 +108,6 @@ if (!$resultado) {
                 </div>
 
             </div>
-
-            <!-- LISTA DE PUBLICAÇÕES -->
 
             <div class="row g-4" id="listaPublicacoes">
 

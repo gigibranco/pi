@@ -71,8 +71,6 @@ require_once "verificarAdmin.php";
 
             <div class="row g-4 justify-content-center">
 
-                <!-- GERENCIAMENTO DE PUBLICAÇÕES -->
-
                 <div class="col-md-6 col-lg-5">
 
                     <div class="card card-menu-admin h-100">
@@ -101,8 +99,6 @@ require_once "verificarAdmin.php";
                     </div>
 
                 </div>
-
-                <!-- GERENCIAMENTO DE USUÁRIOS -->
 
                 <div class="col-md-6 col-lg-5">
 

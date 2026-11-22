@@ -23,7 +23,7 @@ if (
     empty($descricao) ||
     !$usuario_id
 ) {
-    die("Preencha todos os campos obrigatórios e faça login novamente.");
+    die("Preencha todos os campos obrigatórios e faça login novamente");
 }
 
 $caminhoImagem = null;
@@ -31,11 +31,11 @@ $caminhoImagem = null;
 if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] !== UPLOAD_ERR_NO_FILE) {
 
     if ($_FILES["imagem"]["error"] !== UPLOAD_ERR_OK) {
-        die("Erro ao enviar a imagem.");
+        die("Erro ao enviar a imagem");
     }
 
     if ($_FILES["imagem"]["size"] > 5 * 1024 * 1024) {
-        die("A imagem deve ter no máximo 5 MB.");
+        die("A imagem deve ter no máximo 5 MB");
     }
 
     $tiposPermitidos = [
@@ -47,7 +47,7 @@ if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] !== UPLOAD_ERR_NO_FIL
     $tipoImagem = mime_content_type($_FILES["imagem"]["tmp_name"]);
 
     if (!isset($tiposPermitidos[$tipoImagem])) {
-        die("Formato de imagem não permitido. Envie JPG, PNG ou WEBP.");
+        die("Formato de imagem não permitido. Envie JPG, PNG ou WEBP");
     }
 
     $pastaDestino = "imagens/publicacoes/";
@@ -104,5 +104,5 @@ if (mysqli_stmt_execute($stmt)) {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 
-    die("Erro ao cadastrar a flor.");
+    die("Erro ao cadastrar a flor");
 }

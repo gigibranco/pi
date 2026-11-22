@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $cor === "" ||
         $descricao === ""
     ) {
-        $erro = "Preencha todos os campos.";
+        $erro = "Preencha todos os campos";
     } else {
 
         $sql = "UPDATE publicacoes
@@ -80,7 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         mysqli_stmt_close($stmt);
     }
 
-    // Atualiza os dados exibidos no formulário
     $flor["nome_flor"] = $nome_flor;
     $flor["nome_cientifico"] = $nome_cientifico;
     $flor["categoria"] = $categoria;
@@ -139,7 +138,7 @@ mysqli_close($conn);
                         <div>
                             <div class="edicao-icone">✏️</div>
                             <h2 class="titulo">Edição de Publicação</h2>
-                            <p>Atualize as informações da publicação.</p>
+                            <p>Atualize as informações da publicação</p>
                         </div>
 
                         <a href="adminVisualizarPublicacao.php?id=<?= $id ?>" class="btn btn-voltar-admin">
@@ -150,7 +149,7 @@ mysqli_close($conn);
 
                     <div class="alerta-edicao">
                         <span>🌷</span>
-                        Altere somente as informações que precisam de correção.
+                        Altere somente as informações que precisam de correção
                     </div>
 
                     <?php if ($erro !== ""): ?>

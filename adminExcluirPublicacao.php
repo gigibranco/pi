@@ -119,7 +119,7 @@ mysqli_close($conn);
                 </div>
 
                 <p class="text-danger small">
-                    Esta ação não poderá ser desfeita.
+                    Esta ação não poderá ser desfeita
                 </p>
 
                 <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">

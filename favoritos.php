@@ -1,5 +1,21 @@
 <?php
 require_once "verificarLogin.php";
+require_once "config/banco.php";
+
+$usuario_id = (int) $_SESSION["usuario_id"];
+
+$sql = "SELECT publicacoes.*
+        FROM favoritos
+        INNER JOIN publicacoes
+        ON favoritos.publicacao_id = publicacoes.id
+        WHERE favoritos.usuario_id = ?
+        ORDER BY favoritos.data_cadastro DESC";
+
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "i", $usuario_id);
+mysqli_stmt_execute($stmt);
+
+$resultado = mysqli_stmt_get_result($stmt);
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +80,7 @@ require_once "verificarLogin.php";
                             <img
                                 src="imagens/girassol.webp"
                                 alt="Girassol">
+
                             <span class="favorito-selo">♡ Favorita</span>
                         </div>
 
@@ -80,8 +97,9 @@ require_once "verificarLogin.php";
                                 Uma das flores mais admiradas pela sua beleza.
                             </p>
 
-                            <a href="detalhesGirassol.html?voltar=favoritos" class="btn btn-rosa w-100">
-                                        Conhecer flor
+                            <a href="detalhesGirassol.html?voltar=favoritos"
+                               class="btn btn-rosa w-100">
+                                Conhecer flor
                             </a>
 
                         </div>
@@ -89,6 +107,63 @@ require_once "verificarLogin.php";
                     </div>
 
                 </div>
+
+                <?php while ($flor = mysqli_fetch_assoc($resultado)): ?>
+
+                    <div class="col-md-7 col-lg-5">
+
+                        <div class="card card-menu card-favorito h-100">
+
+                            <div class="favorito-imagem">
+
+                                <?php if (
+                                    !empty($flor["imagem"]) &&
+                                    file_exists(__DIR__ . "/" . $flor["imagem"])
+                                ): ?>
+
+                                    <img
+                                        src="<?= htmlspecialchars($flor["imagem"]) ?>"
+                                        alt="<?= htmlspecialchars($flor["nome_flor"]) ?>">
+
+                                <?php else: ?>
+
+                                    <div class="bg-light text-center py-5">
+                                        <span style="font-size: 60px;">🌺</span>
+                                    </div>
+
+                                <?php endif; ?>
+
+                                <span class="favorito-selo">♡ Favorita</span>
+
+                            </div>
+
+                            <div class="card-body text-center">
+
+                                <h3>
+                                    <?= htmlspecialchars($flor["nome_flor"]) ?>
+                                </h3>
+
+                                <p class="favorito-nome-cientifico">
+                                    <?= htmlspecialchars($flor["nome_cientifico"] ?? "") ?>
+                                </p>
+
+                                <p class="favorito-descricao">
+                                    <?= htmlspecialchars($flor["descricao"] ?? "") ?>
+                                </p>
+
+                                <a
+                                    href="visualizarPublicacao.php?id=<?= (int)$flor["id"] ?>&voltar=favoritos"
+                                    class="btn btn-rosa w-100">
+                                    Conhecer flor
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                <?php endwhile; ?>
 
             </div>
 
@@ -108,3 +183,8 @@ require_once "verificarLogin.php";
 
 </body>
 </html>
+
+<?php
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
+?>

@@ -1,21 +1,16 @@
 <?php
-
-
 require_once "config/banco.php";
-
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: cadastroUsuario.php");
     exit;
 }
 
-
 $nome_completo = trim($_POST["nome_completo"] ?? "");
 $nome_usuario = trim($_POST["nome_usuario"] ?? "");
 $email = trim($_POST["email"] ?? "");
 $senha = $_POST["senha"] ?? "";
 $confirmar_senha = $_POST["confirmar_senha"] ?? "";
-
 
 if (
     $nome_completo === "" ||
@@ -24,22 +19,22 @@ if (
     $senha === "" ||
     $confirmar_senha === ""
 ) {
-    die("Preencha todos os campos.");
+    die("Preencha todos os campos");
 }
 
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    die("Digite um e-mail válido.");
+    die("Digite um e-mail válido");
 }
 
 
 if ($senha !== $confirmar_senha) {
-    die("As senhas não coincidem. <a href='cadastroUsuario.php'>Voltar</a>");
+    die("As senhas não coincidem <a href='cadastroUsuario.php'>Voltar</a>");
 }
 
 
 if (strlen($senha) < 6) {
-    die("A senha precisa ter pelo menos 6 caracteres. <a href='cadastroUsuario.php'>Voltar</a>");
+    die("A senha precisa ter pelo menos 6 caracteres <a href='cadastroUsuario.php'>Voltar</a>");
 }
 
 
@@ -49,7 +44,7 @@ $sql_verificar = "SELECT id FROM usuarios
 $stmt = mysqli_prepare($conn, $sql_verificar);
 
 if (!$stmt) {
-    die("Erro ao preparar a consulta.");
+    die("Erro ao preparar a consulta");
 }
 
 mysqli_stmt_bind_param($stmt, "ss", $nome_usuario, $email);
@@ -59,7 +54,7 @@ $resultado = mysqli_stmt_get_result($stmt);
 
 if (mysqli_num_rows($resultado) > 0) {
     mysqli_stmt_close($stmt);
-    die("Este usuário ou e-mail já está cadastrado. <a href='cadastroUsuario.php'>Voltar</a>");
+    die("Este usuário ou e-mail já está cadastrado <a href='cadastroUsuario.php'>Voltar</a>");
 }
 
 mysqli_stmt_close($stmt);
@@ -75,7 +70,7 @@ $sql_inserir = "INSERT INTO usuarios
 $stmt = mysqli_prepare($conn, $sql_inserir);
 
 if (!$stmt) {
-    die("Erro ao preparar o cadastro.");
+    die("Erro ao preparar o cadastro");
 }
 
 mysqli_stmt_bind_param(
@@ -97,7 +92,7 @@ if (mysqli_stmt_execute($stmt)) {
 
 } else {
 
-    echo "Não foi possível realizar o cadastro. Tente novamente.";
+    echo "Não foi possível realizar o cadastro. Tente novamente";
 
 }
 

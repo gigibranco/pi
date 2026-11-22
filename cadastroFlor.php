@@ -42,7 +42,7 @@ require_once "verificarLogin.php";
 
                 <p>
                     Cada flor tem uma história. Registre suas descobertas
-                    e compartilhe conhecimento com a comunidade.
+                    e compartilhe conhecimento com a comunidade
                 </p>
 
                 <div class="principal-divisor">
@@ -117,7 +117,7 @@ require_once "verificarLogin.php";
             </div>
 
             <div class="cadastro-flor-frase text-center">
-                ✿ Compartilhe conhecimento e ajude novas descobertas a florescer. ✿
+                ✿ Compartilhe conhecimento e ajude novas descobertas a florescer ✿
             </div>
 
         </div>
@@ -128,7 +128,7 @@ require_once "verificarLogin.php";
         <div class="footer-flor">❀</div>
 
         <small>
-            Florescer © 2026 · Cultivando conhecimento
+            Florescer © 2026
         </small>
     </footer>
 

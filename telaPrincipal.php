@@ -98,8 +98,6 @@ $administrador = $logado &&
 
             </header>
 
-            <!-- Primeira linha: Catálogo e Favoritos -->
-
             <div class="row justify-content-center g-4 mb-4">
 
                 <div class="col-md-5 col-lg-4">
@@ -157,8 +155,6 @@ $administrador = $logado &&
                 </div>
 
             </div>
-
-            <!-- Segunda linha: Publicações, Nova Flor e Perfil -->
 
             <div class="row justify-content-center g-4">
 

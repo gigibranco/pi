@@ -55,7 +55,7 @@ $resultado = mysqli_stmt_get_result($stmt);
                 <h1>Minhas Publicações</h1>
 
                 <p>
-                    Todas as flores que você compartilhou com a comunidade.
+                    Todas as flores que você compartilhou com a comunidade
                 </p>
 
                 <div class="principal-divisor">
@@ -164,7 +164,7 @@ $resultado = mysqli_stmt_get_result($stmt);
                             <p>
                                 Você ainda não possui publicações.
                                 Cadastre sua primeira flor e compartilhe
-                                suas descobertas com a comunidade.
+                                suas descobertas com a comunidade
                             </p>
 
                             <a href="cadastroFlor.php" class="btn btn-rosa">

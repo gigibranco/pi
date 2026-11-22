@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -35,7 +34,7 @@
                     <p class="text-muted mb-4">
                         Sua conta foi criada com sucesso!
                         Agora você pode acessar o Florescer
-                        e aproveitar todas as funcionalidades.
+                        e aproveitar todas as funcionalidades
                     </p>
 
                     <div class="d-grid">
